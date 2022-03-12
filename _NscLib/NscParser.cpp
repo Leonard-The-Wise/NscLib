@@ -36,18 +36,18 @@
 /* First part of user declarations.  */
 
 /* Line 311 of lalr1.cc  */
-#line 33 "NscParser.ypp"
+#line 60 "NscParser.ypp"
 
   class CNscContext;
 
 /* Line 311 of lalr1.cc  */
-#line 40 "NscParser.ypp"
+#line 67 "NscParser.ypp"
 
 #include "Precomp.h"
 #include "Nsc.h"
 
 
-#pragma warning (disable : 4244 4102 4127)
+#pragma warning (disable : 4065 4102 4127 4244 4267)
 
 #ifndef __cplusplus
 #error "Parser yacc output must be compiled as C++"
@@ -278,6 +278,12 @@ namespace yy {
 
     YY_SYMBOL_PRINT (yymsg, yytype, yyvaluep, yylocationp);
 
+    switch (yytype)
+      {
+  
+	default:
+	  break;
+      }
   }
 
   void
@@ -465,7 +471,7 @@ namespace yy {
 	  case 2:
 
 /* Line 678 of lalr1.cc  */
-#line 124 "NscParser.ypp"
+#line 151 "NscParser.ypp"
     {
 			(yyval) = NscBuildIdentifier ((yysemantic_stack_[(1) - (1)]));
 		}
@@ -474,7 +480,7 @@ namespace yy {
   case 3:
 
 /* Line 678 of lalr1.cc  */
-#line 128 "NscParser.ypp"
+#line 155 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -483,7 +489,7 @@ namespace yy {
   case 4:
 
 /* Line 678 of lalr1.cc  */
-#line 132 "NscParser.ypp"
+#line 159 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -492,7 +498,7 @@ namespace yy {
   case 5:
 
 /* Line 678 of lalr1.cc  */
-#line 136 "NscParser.ypp"
+#line 163 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -501,7 +507,7 @@ namespace yy {
   case 6:
 
 /* Line 678 of lalr1.cc  */
-#line 140 "NscParser.ypp"
+#line 167 "NscParser.ypp"
     {
 			(yyval) = NscBuildObjectConstant (0);
 		}
@@ -510,7 +516,7 @@ namespace yy {
   case 7:
 
 /* Line 678 of lalr1.cc  */
-#line 144 "NscParser.ypp"
+#line 171 "NscParser.ypp"
     {
 			(yyval) = NscBuildObjectConstant (1);
 		}
@@ -519,7 +525,7 @@ namespace yy {
   case 8:
 
 /* Line 678 of lalr1.cc  */
-#line 148 "NscParser.ypp"
+#line 175 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(3) - (2)]); }
     break;
@@ -527,7 +533,7 @@ namespace yy {
   case 9:
 
 /* Line 678 of lalr1.cc  */
-#line 151 "NscParser.ypp"
+#line 178 "NscParser.ypp"
     {
 			(yyval) = NscBuildVectorConstant (NULL, NULL, NULL);
 		}
@@ -536,7 +542,7 @@ namespace yy {
   case 10:
 
 /* Line 678 of lalr1.cc  */
-#line 155 "NscParser.ypp"
+#line 182 "NscParser.ypp"
     {
 			(yyval) = NscBuildVectorConstant ((yysemantic_stack_[(3) - (2)]), NULL, NULL);
 		}
@@ -545,7 +551,7 @@ namespace yy {
   case 11:
 
 /* Line 678 of lalr1.cc  */
-#line 159 "NscParser.ypp"
+#line 186 "NscParser.ypp"
     {
 			(yyval) = NscBuildVectorConstant ((yysemantic_stack_[(5) - (2)]), (yysemantic_stack_[(5) - (4)]), NULL);
 		}
@@ -554,7 +560,7 @@ namespace yy {
   case 12:
 
 /* Line 678 of lalr1.cc  */
-#line 163 "NscParser.ypp"
+#line 190 "NscParser.ypp"
     {
 			(yyval) = NscBuildVectorConstant ((yysemantic_stack_[(7) - (2)]), (yysemantic_stack_[(7) - (4)]), (yysemantic_stack_[(7) - (6)]));
 		}
@@ -563,7 +569,7 @@ namespace yy {
   case 13:
 
 /* Line 678 of lalr1.cc  */
-#line 170 "NscParser.ypp"
+#line 197 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -572,7 +578,7 @@ namespace yy {
   case 14:
 
 /* Line 678 of lalr1.cc  */
-#line 174 "NscParser.ypp"
+#line 201 "NscParser.ypp"
     {
 			(yyval) = NscBuildCall ((yysemantic_stack_[(4) - (1)]), (yysemantic_stack_[(4) - (3)]));
 		}
@@ -581,7 +587,7 @@ namespace yy {
   case 15:
 
 /* Line 678 of lalr1.cc  */
-#line 178 "NscParser.ypp"
+#line 205 "NscParser.ypp"
     {
 			(yyval) = NscBuildCall ((yysemantic_stack_[(3) - (1)]), NULL);
 		}
@@ -590,7 +596,7 @@ namespace yy {
   case 16:
 
 /* Line 678 of lalr1.cc  */
-#line 182 "NscParser.ypp"
+#line 209 "NscParser.ypp"
     {
 			(yyval) = NscBuildElementAccess ((yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -599,7 +605,7 @@ namespace yy {
   case 17:
 
 /* Line 678 of lalr1.cc  */
-#line 186 "NscParser.ypp"
+#line 213 "NscParser.ypp"
     {
 			(yyval) = NscBuildPlusMinus ((yysemantic_stack_[(2) - (1)]), 1, 0);
 		}
@@ -608,7 +614,7 @@ namespace yy {
   case 18:
 
 /* Line 678 of lalr1.cc  */
-#line 190 "NscParser.ypp"
+#line 217 "NscParser.ypp"
     {
 			(yyval) = NscBuildPlusMinus ((yysemantic_stack_[(2) - (1)]), 0, 0);
 		}
@@ -617,7 +623,7 @@ namespace yy {
   case 19:
 
 /* Line 678 of lalr1.cc  */
-#line 197 "NscParser.ypp"
+#line 224 "NscParser.ypp"
     {
 			(yyval) = NscBuildArgExpList (NULL, (yysemantic_stack_[(1) - (1)]));
 		}
@@ -626,7 +632,7 @@ namespace yy {
   case 20:
 
 /* Line 678 of lalr1.cc  */
-#line 201 "NscParser.ypp"
+#line 228 "NscParser.ypp"
     {
 			(yyval) = NscBuildArgExpList ((yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -635,7 +641,7 @@ namespace yy {
   case 21:
 
 /* Line 678 of lalr1.cc  */
-#line 208 "NscParser.ypp"
+#line 235 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -644,7 +650,7 @@ namespace yy {
   case 22:
 
 /* Line 678 of lalr1.cc  */
-#line 212 "NscParser.ypp"
+#line 239 "NscParser.ypp"
     {
 			(yyval) = NscBuildPlusMinus ((yysemantic_stack_[(2) - (2)]), 1, 1);
 		}
@@ -653,7 +659,7 @@ namespace yy {
   case 23:
 
 /* Line 678 of lalr1.cc  */
-#line 216 "NscParser.ypp"
+#line 243 "NscParser.ypp"
     {
 			(yyval) = NscBuildPlusMinus ((yysemantic_stack_[(2) - (2)]), 0, 1);
 		}
@@ -662,7 +668,7 @@ namespace yy {
   case 24:
 
 /* Line 678 of lalr1.cc  */
-#line 220 "NscParser.ypp"
+#line 247 "NscParser.ypp"
     {
 			(yyval) = NscBuildUnaryOp ('+', (yysemantic_stack_[(2) - (2)]));
 		}
@@ -671,7 +677,7 @@ namespace yy {
   case 25:
 
 /* Line 678 of lalr1.cc  */
-#line 224 "NscParser.ypp"
+#line 251 "NscParser.ypp"
     {
 			(yyval) = NscBuildUnaryOp ('-', (yysemantic_stack_[(2) - (2)]));
 		}
@@ -680,7 +686,7 @@ namespace yy {
   case 26:
 
 /* Line 678 of lalr1.cc  */
-#line 228 "NscParser.ypp"
+#line 255 "NscParser.ypp"
     {
 			(yyval) = NscBuildUnaryOp ('~', (yysemantic_stack_[(2) - (2)]));
 		}
@@ -689,7 +695,7 @@ namespace yy {
   case 27:
 
 /* Line 678 of lalr1.cc  */
-#line 232 "NscParser.ypp"
+#line 259 "NscParser.ypp"
     {
 			(yyval) = NscBuildUnaryOp ('!', (yysemantic_stack_[(2) - (2)]));
 		}
@@ -698,7 +704,7 @@ namespace yy {
   case 28:
 
 /* Line 678 of lalr1.cc  */
-#line 239 "NscParser.ypp"
+#line 266 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -707,7 +713,7 @@ namespace yy {
   case 29:
 
 /* Line 678 of lalr1.cc  */
-#line 243 "NscParser.ypp"
+#line 270 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp ('*', (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -716,7 +722,7 @@ namespace yy {
   case 30:
 
 /* Line 678 of lalr1.cc  */
-#line 247 "NscParser.ypp"
+#line 274 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp ('/', (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -725,7 +731,7 @@ namespace yy {
   case 31:
 
 /* Line 678 of lalr1.cc  */
-#line 251 "NscParser.ypp"
+#line 278 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp ('%', (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -734,7 +740,7 @@ namespace yy {
   case 32:
 
 /* Line 678 of lalr1.cc  */
-#line 258 "NscParser.ypp"
+#line 285 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -743,7 +749,7 @@ namespace yy {
   case 33:
 
 /* Line 678 of lalr1.cc  */
-#line 262 "NscParser.ypp"
+#line 289 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp ('+', (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -752,7 +758,7 @@ namespace yy {
   case 34:
 
 /* Line 678 of lalr1.cc  */
-#line 266 "NscParser.ypp"
+#line 293 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp ('-', (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -761,7 +767,7 @@ namespace yy {
   case 35:
 
 /* Line 678 of lalr1.cc  */
-#line 273 "NscParser.ypp"
+#line 300 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -770,7 +776,7 @@ namespace yy {
   case 36:
 
 /* Line 678 of lalr1.cc  */
-#line 277 "NscParser.ypp"
+#line 304 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::SL, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -779,7 +785,7 @@ namespace yy {
   case 37:
 
 /* Line 678 of lalr1.cc  */
-#line 281 "NscParser.ypp"
+#line 308 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::SR, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -788,7 +794,7 @@ namespace yy {
   case 38:
 
 /* Line 678 of lalr1.cc  */
-#line 285 "NscParser.ypp"
+#line 312 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::USR, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -797,7 +803,7 @@ namespace yy {
   case 39:
 
 /* Line 678 of lalr1.cc  */
-#line 292 "NscParser.ypp"
+#line 319 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -806,7 +812,7 @@ namespace yy {
   case 40:
 
 /* Line 678 of lalr1.cc  */
-#line 296 "NscParser.ypp"
+#line 323 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp ('<', (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -815,7 +821,7 @@ namespace yy {
   case 41:
 
 /* Line 678 of lalr1.cc  */
-#line 300 "NscParser.ypp"
+#line 327 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp ('>', (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -824,7 +830,7 @@ namespace yy {
   case 42:
 
 /* Line 678 of lalr1.cc  */
-#line 304 "NscParser.ypp"
+#line 331 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::LTEQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -833,7 +839,7 @@ namespace yy {
   case 43:
 
 /* Line 678 of lalr1.cc  */
-#line 308 "NscParser.ypp"
+#line 335 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::GTEQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -842,7 +848,7 @@ namespace yy {
   case 44:
 
 /* Line 678 of lalr1.cc  */
-#line 315 "NscParser.ypp"
+#line 342 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -851,7 +857,7 @@ namespace yy {
   case 45:
 
 /* Line 678 of lalr1.cc  */
-#line 319 "NscParser.ypp"
+#line 346 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::EQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -860,7 +866,7 @@ namespace yy {
   case 46:
 
 /* Line 678 of lalr1.cc  */
-#line 323 "NscParser.ypp"
+#line 350 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::NOTEQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -869,7 +875,7 @@ namespace yy {
   case 47:
 
 /* Line 678 of lalr1.cc  */
-#line 330 "NscParser.ypp"
+#line 357 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -878,7 +884,7 @@ namespace yy {
   case 48:
 
 /* Line 678 of lalr1.cc  */
-#line 334 "NscParser.ypp"
+#line 361 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp ('&', (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -887,7 +893,7 @@ namespace yy {
   case 49:
 
 /* Line 678 of lalr1.cc  */
-#line 341 "NscParser.ypp"
+#line 368 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -896,7 +902,7 @@ namespace yy {
   case 50:
 
 /* Line 678 of lalr1.cc  */
-#line 345 "NscParser.ypp"
+#line 372 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp ('^', (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -905,7 +911,7 @@ namespace yy {
   case 51:
 
 /* Line 678 of lalr1.cc  */
-#line 352 "NscParser.ypp"
+#line 379 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -914,7 +920,7 @@ namespace yy {
   case 52:
 
 /* Line 678 of lalr1.cc  */
-#line 356 "NscParser.ypp"
+#line 383 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp ('|', (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -923,7 +929,7 @@ namespace yy {
   case 53:
 
 /* Line 678 of lalr1.cc  */
-#line 363 "NscParser.ypp"
+#line 390 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -932,7 +938,7 @@ namespace yy {
   case 54:
 
 /* Line 678 of lalr1.cc  */
-#line 367 "NscParser.ypp"
+#line 394 "NscParser.ypp"
     {
 			(yyval) = NscBuildLogicalOp (token::ANDAND, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -941,7 +947,7 @@ namespace yy {
   case 55:
 
 /* Line 678 of lalr1.cc  */
-#line 374 "NscParser.ypp"
+#line 401 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -950,7 +956,7 @@ namespace yy {
   case 56:
 
 /* Line 678 of lalr1.cc  */
-#line 378 "NscParser.ypp"
+#line 405 "NscParser.ypp"
     {
 			(yyval) = NscBuildLogicalOp (token::OROR, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -959,7 +965,7 @@ namespace yy {
   case 57:
 
 /* Line 678 of lalr1.cc  */
-#line 385 "NscParser.ypp"
+#line 412 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -968,7 +974,7 @@ namespace yy {
   case 58:
 
 /* Line 678 of lalr1.cc  */
-#line 389 "NscParser.ypp"
+#line 416 "NscParser.ypp"
     {
 			(yyval) = NscBuildConditional ((yysemantic_stack_[(5) - (1)]), (yysemantic_stack_[(5) - (3)]), (yysemantic_stack_[(5) - (5)]));
 		}
@@ -977,7 +983,7 @@ namespace yy {
   case 59:
 
 /* Line 678 of lalr1.cc  */
-#line 396 "NscParser.ypp"
+#line 423 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -986,7 +992,7 @@ namespace yy {
   case 60:
 
 /* Line 678 of lalr1.cc  */
-#line 400 "NscParser.ypp"
+#line 427 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp ('=', (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -995,7 +1001,7 @@ namespace yy {
   case 61:
 
 /* Line 678 of lalr1.cc  */
-#line 404 "NscParser.ypp"
+#line 431 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::MULEQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1004,7 +1010,7 @@ namespace yy {
   case 62:
 
 /* Line 678 of lalr1.cc  */
-#line 408 "NscParser.ypp"
+#line 435 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::DIVEQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1013,7 +1019,7 @@ namespace yy {
   case 63:
 
 /* Line 678 of lalr1.cc  */
-#line 412 "NscParser.ypp"
+#line 439 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::MODEQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1022,7 +1028,7 @@ namespace yy {
   case 64:
 
 /* Line 678 of lalr1.cc  */
-#line 416 "NscParser.ypp"
+#line 443 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::ADDEQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1031,7 +1037,7 @@ namespace yy {
   case 65:
 
 /* Line 678 of lalr1.cc  */
-#line 420 "NscParser.ypp"
+#line 447 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::SUBEQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1040,7 +1046,7 @@ namespace yy {
   case 66:
 
 /* Line 678 of lalr1.cc  */
-#line 424 "NscParser.ypp"
+#line 451 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::SLEQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1049,7 +1055,7 @@ namespace yy {
   case 67:
 
 /* Line 678 of lalr1.cc  */
-#line 428 "NscParser.ypp"
+#line 455 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::SREQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1058,7 +1064,7 @@ namespace yy {
   case 68:
 
 /* Line 678 of lalr1.cc  */
-#line 432 "NscParser.ypp"
+#line 459 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::USREQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1067,7 +1073,7 @@ namespace yy {
   case 69:
 
 /* Line 678 of lalr1.cc  */
-#line 436 "NscParser.ypp"
+#line 463 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::ANDEQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1076,7 +1082,7 @@ namespace yy {
   case 70:
 
 /* Line 678 of lalr1.cc  */
-#line 440 "NscParser.ypp"
+#line 467 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::XOREQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1085,7 +1091,7 @@ namespace yy {
   case 71:
 
 /* Line 678 of lalr1.cc  */
-#line 444 "NscParser.ypp"
+#line 471 "NscParser.ypp"
     {
 			(yyval) = NscBuildBinaryOp (token::OREQ, (yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1094,7 +1100,7 @@ namespace yy {
   case 72:
 
 /* Line 678 of lalr1.cc  */
-#line 451 "NscParser.ypp"
+#line 478 "NscParser.ypp"
     {
 			(yyval) = NscBuildExpression (NULL, (yysemantic_stack_[(1) - (1)]));
 		}
@@ -1103,7 +1109,7 @@ namespace yy {
   case 73:
 
 /* Line 678 of lalr1.cc  */
-#line 458 "NscParser.ypp"
+#line 485 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -1112,14 +1118,14 @@ namespace yy {
   case 74:
 
 /* Line 678 of lalr1.cc  */
-#line 470 "NscParser.ypp"
+#line 497 "NscParser.ypp"
     { NscBuildSaveLine (1); }
     break;
 
   case 75:
 
 /* Line 678 of lalr1.cc  */
-#line 471 "NscParser.ypp"
+#line 498 "NscParser.ypp"
     {
 			(yyval) = NscBuildMakeConstType ((yysemantic_stack_[(3) - (3)]));
 			NscBuildCopyLine (0, 1);
@@ -1129,7 +1135,7 @@ namespace yy {
   case 76:
 
 /* Line 678 of lalr1.cc  */
-#line 476 "NscParser.ypp"
+#line 503 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 			NscBuildSaveLine (0);
@@ -1139,7 +1145,7 @@ namespace yy {
   case 77:
 
 /* Line 678 of lalr1.cc  */
-#line 484 "NscParser.ypp"
+#line 511 "NscParser.ypp"
     {
 			(yyval) = NscBuildType (token::VOID_TYPE, NULL);
 		}
@@ -1148,7 +1154,7 @@ namespace yy {
   case 78:
 
 /* Line 678 of lalr1.cc  */
-#line 488 "NscParser.ypp"
+#line 515 "NscParser.ypp"
     {
 			(yyval) = NscBuildType (token::INT_TYPE, NULL);
 		}
@@ -1157,7 +1163,7 @@ namespace yy {
   case 79:
 
 /* Line 678 of lalr1.cc  */
-#line 492 "NscParser.ypp"
+#line 519 "NscParser.ypp"
     {
 			(yyval) = NscBuildType (token::FLOAT_TYPE, NULL);
 		}
@@ -1166,7 +1172,7 @@ namespace yy {
   case 80:
 
 /* Line 678 of lalr1.cc  */
-#line 496 "NscParser.ypp"
+#line 523 "NscParser.ypp"
     {
 			(yyval) = NscBuildType (token::OBJECT_TYPE, NULL);
 		}
@@ -1175,7 +1181,7 @@ namespace yy {
   case 81:
 
 /* Line 678 of lalr1.cc  */
-#line 500 "NscParser.ypp"
+#line 527 "NscParser.ypp"
     {
 			(yyval) = NscBuildType (token::STRING_TYPE, NULL);
 		}
@@ -1184,7 +1190,7 @@ namespace yy {
   case 82:
 
 /* Line 678 of lalr1.cc  */
-#line 504 "NscParser.ypp"
+#line 531 "NscParser.ypp"
     {
 			(yyval) = NscBuildType (token::ACTION_TYPE, NULL);
 		}
@@ -1193,7 +1199,7 @@ namespace yy {
   case 83:
 
 /* Line 678 of lalr1.cc  */
-#line 508 "NscParser.ypp"
+#line 535 "NscParser.ypp"
     {
 			(yyval) = NscBuildType (token::VECTOR_TYPE, NULL);
 		}
@@ -1202,7 +1208,7 @@ namespace yy {
   case 84:
 
 /* Line 678 of lalr1.cc  */
-#line 512 "NscParser.ypp"
+#line 539 "NscParser.ypp"
     {
 			(yyval) = NscBuildType (token::STRUCT_TYPE, (yysemantic_stack_[(2) - (2)]));
 		}
@@ -1211,7 +1217,7 @@ namespace yy {
   case 85:
 
 /* Line 678 of lalr1.cc  */
-#line 516 "NscParser.ypp"
+#line 543 "NscParser.ypp"
     {
 			(yyval) = NscBuildType (token::ENGINE_TYPE, (yysemantic_stack_[(1) - (1)]));
 		}
@@ -1220,7 +1226,7 @@ namespace yy {
   case 86:
 
 /* Line 678 of lalr1.cc  */
-#line 523 "NscParser.ypp"
+#line 550 "NscParser.ypp"
     {
 			NscBuildSaveLine (0);
 		}
@@ -1229,7 +1235,7 @@ namespace yy {
   case 87:
 
 /* Line 678 of lalr1.cc  */
-#line 536 "NscParser.ypp"
+#line 563 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -1238,7 +1244,7 @@ namespace yy {
   case 88:
 
 /* Line 678 of lalr1.cc  */
-#line 540 "NscParser.ypp"
+#line 567 "NscParser.ypp"
     {
 			NscBuildSaveLine (0);
 			(yyval) = NscBuildMarkLine (0, NscBuildStatement (NULL, NULL, NULL));
@@ -1248,7 +1254,7 @@ namespace yy {
   case 89:
 
 /* Line 678 of lalr1.cc  */
-#line 548 "NscParser.ypp"
+#line 575 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -1257,7 +1263,7 @@ namespace yy {
   case 90:
 
 /* Line 678 of lalr1.cc  */
-#line 552 "NscParser.ypp"
+#line 579 "NscParser.ypp"
     {
 			NscBuildSaveLine (0);
 			(yyval) = NscBuildMarkLine (0, NscBuildBlankStatement ());
@@ -1267,7 +1273,7 @@ namespace yy {
   case 91:
 
 /* Line 678 of lalr1.cc  */
-#line 560 "NscParser.ypp"
+#line 587 "NscParser.ypp"
     {
 			(yyval) = NscBuildStatement (NULL, (yysemantic_stack_[(1) - (1)]), NULL);
 		}
@@ -1276,7 +1282,7 @@ namespace yy {
   case 92:
 
 /* Line 678 of lalr1.cc  */
-#line 564 "NscParser.ypp"
+#line 591 "NscParser.ypp"
     {
 			(yyval) = NscBuildStatement (NULL, (yysemantic_stack_[(1) - (1)]), NULL);
 		}
@@ -1285,7 +1291,7 @@ namespace yy {
   case 93:
 
 /* Line 678 of lalr1.cc  */
-#line 568 "NscParser.ypp"
+#line 595 "NscParser.ypp"
     {
 			(yyval) = NscBuildMarkLine (0, NscBuildStatement (NULL, (yysemantic_stack_[(1) - (1)]), NULL));
 		}
@@ -1294,7 +1300,7 @@ namespace yy {
   case 94:
 
 /* Line 678 of lalr1.cc  */
-#line 572 "NscParser.ypp"
+#line 599 "NscParser.ypp"
     {
 			(yyval) = NscBuildStatement (NULL, (yysemantic_stack_[(1) - (1)]), NULL);
 		}
@@ -1303,7 +1309,7 @@ namespace yy {
   case 95:
 
 /* Line 678 of lalr1.cc  */
-#line 576 "NscParser.ypp"
+#line 603 "NscParser.ypp"
     {
 			(yyval) = NscBuildStatement (NULL, (yysemantic_stack_[(1) - (1)]), NULL);
 		}
@@ -1312,7 +1318,7 @@ namespace yy {
   case 96:
 
 /* Line 678 of lalr1.cc  */
-#line 580 "NscParser.ypp"
+#line 607 "NscParser.ypp"
     {
 			(yyval) = NscBuildMarkLine (0, NscBuildStatement (NULL, (yysemantic_stack_[(1) - (1)]), NULL));
 		}
@@ -1321,7 +1327,7 @@ namespace yy {
   case 97:
 
 /* Line 678 of lalr1.cc  */
-#line 584 "NscParser.ypp"
+#line 611 "NscParser.ypp"
     {
 			(yyval) = NscBuildMarkLine (0, NscBuildStatement (NULL, (yysemantic_stack_[(1) - (1)]), NULL));
 		}
@@ -1330,7 +1336,7 @@ namespace yy {
   case 98:
 
 /* Line 678 of lalr1.cc  */
-#line 597 "NscParser.ypp"
+#line 624 "NscParser.ypp"
     {
 			(yyval) = (yysemantic_stack_[(1) - (1)]);
 		}
@@ -1339,14 +1345,14 @@ namespace yy {
   case 99:
 
 /* Line 678 of lalr1.cc  */
-#line 603 "NscParser.ypp"
+#line 630 "NscParser.ypp"
     { NscBuildSaveLine (0); }
     break;
 
   case 100:
 
 /* Line 678 of lalr1.cc  */
-#line 604 "NscParser.ypp"
+#line 631 "NscParser.ypp"
     {
 			(yyval) = NscBuildCase (token::CASE, (yysemantic_stack_[(4) - (3)]));
 		}
@@ -1355,14 +1361,14 @@ namespace yy {
   case 101:
 
 /* Line 678 of lalr1.cc  */
-#line 607 "NscParser.ypp"
+#line 634 "NscParser.ypp"
     { NscBuildSaveLine (0); }
     break;
 
   case 102:
 
 /* Line 678 of lalr1.cc  */
-#line 608 "NscParser.ypp"
+#line 635 "NscParser.ypp"
     {
 			(yyval) = NscBuildCase (token::DEFAULT, NULL);
 		}
@@ -1371,7 +1377,7 @@ namespace yy {
   case 103:
 
 /* Line 678 of lalr1.cc  */
-#line 621 "NscParser.ypp"
+#line 648 "NscParser.ypp"
     {
 			(yyval) = NscBuildStatement (NULL, NULL, (yysemantic_stack_[(2) - (1)]));
 		}
@@ -1380,7 +1386,7 @@ namespace yy {
   case 104:
 
 /* Line 678 of lalr1.cc  */
-#line 625 "NscParser.ypp"
+#line 652 "NscParser.ypp"
     {
 			(yyval) = NscBuildStatement (NULL, (yysemantic_stack_[(3) - (2)]), (yysemantic_stack_[(3) - (1)]));
 		}
@@ -1389,7 +1395,7 @@ namespace yy {
   case 105:
 
 /* Line 678 of lalr1.cc  */
-#line 632 "NscParser.ypp"
+#line 659 "NscParser.ypp"
     {
 			(yyval) = NscBuildStatementFence ();
 		}
@@ -1398,7 +1404,7 @@ namespace yy {
   case 106:
 
 /* Line 678 of lalr1.cc  */
-#line 639 "NscParser.ypp"
+#line 666 "NscParser.ypp"
     {
 			(yyval) = NscBuildStatement (NULL, (yysemantic_stack_[(1) - (1)]), NULL);
 		}
@@ -1407,7 +1413,7 @@ namespace yy {
   case 107:
 
 /* Line 678 of lalr1.cc  */
-#line 643 "NscParser.ypp"
+#line 670 "NscParser.ypp"
     {
 			(yyval) = NscBuildStatement ((yysemantic_stack_[(2) - (1)]), (yysemantic_stack_[(2) - (2)]), NULL);
 		}
@@ -1416,14 +1422,14 @@ namespace yy {
   case 108:
 
 /* Line 678 of lalr1.cc  */
-#line 655 "NscParser.ypp"
+#line 682 "NscParser.ypp"
     { NscBuildSaveLine (0); }
     break;
 
   case 109:
 
 /* Line 678 of lalr1.cc  */
-#line 656 "NscParser.ypp"
+#line 683 "NscParser.ypp"
     {
 			(yyval) = NscBuildStatement (NULL, (yysemantic_stack_[(3) - (2)]), NULL);
 		}
@@ -1432,7 +1438,7 @@ namespace yy {
   case 110:
 
 /* Line 678 of lalr1.cc  */
-#line 660 "NscParser.ypp"
+#line 687 "NscParser.ypp"
     {
 			(yyval) = NULL;
 			if (NscBuildSyntaxError (YYCHAR_NAME, YYLVAL))
@@ -1452,7 +1458,7 @@ namespace yy {
   case 111:
 
 /* Line 678 of lalr1.cc  */
-#line 684 "NscParser.ypp"
+#line 711 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (IF, (yysemantic_stack_[(2) - (1)]), 0, NULL, NULL, NULL, (yysemantic_stack_[(2) - (2)]), NULL);
 		}
@@ -1461,7 +1467,7 @@ namespace yy {
   case 112:
 
 /* Line 678 of lalr1.cc  */
-#line 688 "NscParser.ypp"
+#line 715 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (IF, (yysemantic_stack_[(2) - (1)]), 0, NULL, NULL, NULL, NULL, (yysemantic_stack_[(2) - (2)]));
 		}
@@ -1470,7 +1476,7 @@ namespace yy {
   case 113:
 
 /* Line 678 of lalr1.cc  */
-#line 692 "NscParser.ypp"
+#line 719 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (SWITCH, (yysemantic_stack_[(2) - (1)]), 0, NULL, NULL, NULL, (yysemantic_stack_[(2) - (2)]), NULL);
 		}
@@ -1479,7 +1485,7 @@ namespace yy {
   case 114:
 
 /* Line 678 of lalr1.cc  */
-#line 699 "NscParser.ypp"
+#line 726 "NscParser.ypp"
     {
 			NscBuildSaveLine (0);
 			(yyval) = NscBuild5Block (IF, (yysemantic_stack_[(3) - (1)]), 1, NULL, NULL, NULL, (yysemantic_stack_[(3) - (2)]), NULL);
@@ -1489,14 +1495,14 @@ namespace yy {
   case 115:
 
 /* Line 678 of lalr1.cc  */
-#line 706 "NscParser.ypp"
+#line 733 "NscParser.ypp"
     { NscBuildSaveLine (0); }
     break;
 
   case 116:
 
 /* Line 678 of lalr1.cc  */
-#line 707 "NscParser.ypp"
+#line 734 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (IF, NULL, 1, NULL, (yysemantic_stack_[(5) - (4)]), NULL, NULL, NULL);
 		}
@@ -1505,14 +1511,14 @@ namespace yy {
   case 117:
 
 /* Line 678 of lalr1.cc  */
-#line 713 "NscParser.ypp"
+#line 740 "NscParser.ypp"
     { NscBuildSaveLine (0); }
     break;
 
   case 118:
 
 /* Line 678 of lalr1.cc  */
-#line 714 "NscParser.ypp"
+#line 741 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (SWITCH, NULL, 1, NULL, (yysemantic_stack_[(5) - (4)]), NULL, NULL, NULL);
 		}
@@ -1521,7 +1527,7 @@ namespace yy {
   case 119:
 
 /* Line 678 of lalr1.cc  */
-#line 727 "NscParser.ypp"
+#line 754 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (WHILE, (yysemantic_stack_[(2) - (1)]), 0, NULL, NULL, NULL, (yysemantic_stack_[(2) - (2)]), NULL);
 		}
@@ -1530,14 +1536,14 @@ namespace yy {
   case 120:
 
 /* Line 678 of lalr1.cc  */
-#line 730 "NscParser.ypp"
+#line 757 "NscParser.ypp"
     { NscBuildSaveLine (0); }
     break;
 
   case 121:
 
 /* Line 678 of lalr1.cc  */
-#line 731 "NscParser.ypp"
+#line 758 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (DO, (yysemantic_stack_[(8) - (1)]), 0, NULL, (yysemantic_stack_[(8) - (6)]), NULL, (yysemantic_stack_[(8) - (2)]), NULL);
 		}
@@ -1546,7 +1552,7 @@ namespace yy {
   case 122:
 
 /* Line 678 of lalr1.cc  */
-#line 735 "NscParser.ypp"
+#line 762 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (FOR, (yysemantic_stack_[(2) - (1)]), 0, NULL, NULL, NULL, (yysemantic_stack_[(2) - (2)]), NULL);
 		}
@@ -1555,7 +1561,7 @@ namespace yy {
   case 123:
 
 /* Line 678 of lalr1.cc  */
-#line 742 "NscParser.ypp"
+#line 769 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (FOR, NULL, 1, NULL, NULL, NULL, NULL, NULL);
 		}
@@ -1564,7 +1570,7 @@ namespace yy {
   case 124:
 
 /* Line 678 of lalr1.cc  */
-#line 746 "NscParser.ypp"
+#line 773 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (FOR, NULL, 1, (yysemantic_stack_[(5) - (2)]), NULL, NULL, NULL, NULL);
 		}
@@ -1573,7 +1579,7 @@ namespace yy {
   case 125:
 
 /* Line 678 of lalr1.cc  */
-#line 750 "NscParser.ypp"
+#line 777 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (FOR, NULL, 1, NULL, (yysemantic_stack_[(5) - (3)]), NULL, NULL, NULL);
 		}
@@ -1582,7 +1588,7 @@ namespace yy {
   case 126:
 
 /* Line 678 of lalr1.cc  */
-#line 754 "NscParser.ypp"
+#line 781 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (FOR, NULL, 1, (yysemantic_stack_[(6) - (2)]), (yysemantic_stack_[(6) - (4)]), NULL, NULL, NULL);
 		}
@@ -1591,7 +1597,7 @@ namespace yy {
   case 127:
 
 /* Line 678 of lalr1.cc  */
-#line 758 "NscParser.ypp"
+#line 785 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (FOR, NULL, 1, NULL, NULL, (yysemantic_stack_[(5) - (4)]), NULL, NULL);
 		}
@@ -1600,7 +1606,7 @@ namespace yy {
   case 128:
 
 /* Line 678 of lalr1.cc  */
-#line 762 "NscParser.ypp"
+#line 789 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (FOR, NULL, 1, (yysemantic_stack_[(6) - (2)]), NULL, (yysemantic_stack_[(6) - (5)]), NULL, NULL);
 		}
@@ -1609,7 +1615,7 @@ namespace yy {
   case 129:
 
 /* Line 678 of lalr1.cc  */
-#line 766 "NscParser.ypp"
+#line 793 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (FOR, NULL, 1, NULL, (yysemantic_stack_[(6) - (3)]), (yysemantic_stack_[(6) - (5)]), NULL, NULL);
 		}
@@ -1618,7 +1624,7 @@ namespace yy {
   case 130:
 
 /* Line 678 of lalr1.cc  */
-#line 770 "NscParser.ypp"
+#line 797 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (FOR, NULL, 1, (yysemantic_stack_[(7) - (2)]), (yysemantic_stack_[(7) - (4)]), (yysemantic_stack_[(7) - (6)]), NULL, NULL);
 		}
@@ -1627,7 +1633,7 @@ namespace yy {
   case 131:
 
 /* Line 678 of lalr1.cc  */
-#line 777 "NscParser.ypp"
+#line 804 "NscParser.ypp"
     {
 			NscBuildSaveLine (0);
 		}
@@ -1636,14 +1642,14 @@ namespace yy {
   case 132:
 
 /* Line 678 of lalr1.cc  */
-#line 783 "NscParser.ypp"
+#line 810 "NscParser.ypp"
     { NscBuildSaveLine (0); }
     break;
 
   case 133:
 
 /* Line 678 of lalr1.cc  */
-#line 784 "NscParser.ypp"
+#line 811 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (WHILE, NULL, 1, NULL, (yysemantic_stack_[(5) - (4)]), NULL, NULL, NULL);
 		}
@@ -1652,7 +1658,7 @@ namespace yy {
   case 134:
 
 /* Line 678 of lalr1.cc  */
-#line 791 "NscParser.ypp"
+#line 818 "NscParser.ypp"
     {
 			(yyval) = NscBuild5Block (DO, NULL, 1, NULL, NULL, NULL, NULL, NULL);
 		}
@@ -1661,14 +1667,14 @@ namespace yy {
   case 135:
 
 /* Line 678 of lalr1.cc  */
-#line 803 "NscParser.ypp"
+#line 830 "NscParser.ypp"
     { NscBuildSaveLine (0); }
     break;
 
   case 136:
 
 /* Line 678 of lalr1.cc  */
-#line 804 "NscParser.ypp"
+#line 831 "NscParser.ypp"
     {
 			(yyval) = NscBuildBreakContinue (CONTINUE);
 		}
@@ -1677,14 +1683,14 @@ namespace yy {
   case 137:
 
 /* Line 678 of lalr1.cc  */
-#line 807 "NscParser.ypp"
+#line 834 "NscParser.ypp"
     { NscBuildSaveLine (0); }
     break;
 
   case 138:
 
 /* Line 678 of lalr1.cc  */
-#line 808 "NscParser.ypp"
+#line 835 "NscParser.ypp"
     {
 			(yyval) = NscBuildBreakContinue (BREAK);
 		}
@@ -1693,7 +1699,7 @@ namespace yy {
   case 139:
 
 /* Line 678 of lalr1.cc  */
-#line 812 "NscParser.ypp"
+#line 839 "NscParser.ypp"
     {
 			(yyval) = NscBuildReturn (NULL);
 		}
@@ -1702,7 +1708,7 @@ namespace yy {
   case 140:
 
 /* Line 678 of lalr1.cc  */
-#line 816 "NscParser.ypp"
+#line 843 "NscParser.ypp"
     {
 			(yyval) = NscBuildReturn ((yysemantic_stack_[(3) - (2)]));
 		}
@@ -1711,7 +1717,7 @@ namespace yy {
   case 141:
 
 /* Line 678 of lalr1.cc  */
-#line 823 "NscParser.ypp"
+#line 850 "NscParser.ypp"
     {
 			NscBuildSaveLine (0);
 		}
@@ -1720,7 +1726,7 @@ namespace yy {
   case 142:
 
 /* Line 678 of lalr1.cc  */
-#line 836 "NscParser.ypp"
+#line 863 "NscParser.ypp"
     {
 			(yyval) = NscBuildDeclaration ((yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (2)]));
 		}
@@ -1729,7 +1735,7 @@ namespace yy {
   case 143:
 
 /* Line 678 of lalr1.cc  */
-#line 843 "NscParser.ypp"
+#line 870 "NscParser.ypp"
     {
 			(yyval) = NscBuildDeclarationList (NULL, (yysemantic_stack_[(1) - (1)]));
 		}
@@ -1738,7 +1744,7 @@ namespace yy {
   case 144:
 
 /* Line 678 of lalr1.cc  */
-#line 847 "NscParser.ypp"
+#line 874 "NscParser.ypp"
     {
 			(yyval) = NscBuildDeclarationList ((yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1747,7 +1753,7 @@ namespace yy {
   case 145:
 
 /* Line 678 of lalr1.cc  */
-#line 854 "NscParser.ypp"
+#line 881 "NscParser.ypp"
     {
 			(yyval) = NscBuildEndDeclaration ((yysemantic_stack_[(1) - (1)]), NULL);
 		}
@@ -1756,7 +1762,7 @@ namespace yy {
   case 146:
 
 /* Line 678 of lalr1.cc  */
-#line 858 "NscParser.ypp"
+#line 885 "NscParser.ypp"
     {
 			(yyval) = NscBuildEndDeclaration ((yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1765,7 +1771,7 @@ namespace yy {
   case 147:
 
 /* Line 678 of lalr1.cc  */
-#line 865 "NscParser.ypp"
+#line 892 "NscParser.ypp"
     {
 			(yyval) = NscBuildBeginDeclaration ((yysemantic_stack_[(1) - (1)]));
 		}
@@ -1774,7 +1780,7 @@ namespace yy {
   case 148:
 
 /* Line 678 of lalr1.cc  */
-#line 878 "NscParser.ypp"
+#line 905 "NscParser.ypp"
     {
 			(yyval) = NscBuildFunctionDef ((yysemantic_stack_[(2) - (1)]), (yysemantic_stack_[(2) - (2)]));
 		}
@@ -1783,7 +1789,7 @@ namespace yy {
   case 149:
 
 /* Line 678 of lalr1.cc  */
-#line 885 "NscParser.ypp"
+#line 912 "NscParser.ypp"
     {
 			(yyval) = NscBuildFunctionPrototype ((yysemantic_stack_[(2) - (1)]));
 		}
@@ -1792,7 +1798,7 @@ namespace yy {
   case 150:
 
 /* Line 678 of lalr1.cc  */
-#line 892 "NscParser.ypp"
+#line 919 "NscParser.ypp"
     {
 			(yyval) = NscBuildFunctionDeclarator ((yysemantic_stack_[(5) - (1)]), (yysemantic_stack_[(5) - (2)]), (yysemantic_stack_[(5) - (4)]));
 		}
@@ -1801,7 +1807,7 @@ namespace yy {
   case 151:
 
 /* Line 678 of lalr1.cc  */
-#line 896 "NscParser.ypp"
+#line 923 "NscParser.ypp"
     {
 			(yyval) = NscBuildFunctionDeclarator ((yysemantic_stack_[(4) - (1)]), (yysemantic_stack_[(4) - (2)]), NULL);
 		}
@@ -1810,7 +1816,7 @@ namespace yy {
   case 154:
 
 /* Line 678 of lalr1.cc  */
-#line 908 "NscParser.ypp"
+#line 935 "NscParser.ypp"
     {
 			(yyval) = NscBuildParameterList (NULL, (yysemantic_stack_[(1) - (1)]));
 		}
@@ -1819,7 +1825,7 @@ namespace yy {
   case 155:
 
 /* Line 678 of lalr1.cc  */
-#line 912 "NscParser.ypp"
+#line 939 "NscParser.ypp"
     {
 			(yyval) = NscBuildParameterList ((yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1828,7 +1834,7 @@ namespace yy {
   case 156:
 
 /* Line 678 of lalr1.cc  */
-#line 919 "NscParser.ypp"
+#line 946 "NscParser.ypp"
     {
 			(yyval) = NscBuildParameter ((yysemantic_stack_[(2) - (1)]), (yysemantic_stack_[(2) - (2)]), NULL);
 		}
@@ -1837,7 +1843,7 @@ namespace yy {
   case 157:
 
 /* Line 678 of lalr1.cc  */
-#line 923 "NscParser.ypp"
+#line 950 "NscParser.ypp"
     {
 			(yyval) = NscBuildParameter ((yysemantic_stack_[(4) - (1)]), (yysemantic_stack_[(4) - (2)]), (yysemantic_stack_[(4) - (4)]));
 		}
@@ -1846,7 +1852,7 @@ namespace yy {
   case 158:
 
 /* Line 678 of lalr1.cc  */
-#line 936 "NscParser.ypp"
+#line 963 "NscParser.ypp"
     {
 			(yyval) = NscBuildStruct ((yysemantic_stack_[(6) - (2)]), (yysemantic_stack_[(6) - (4)]));
 		}
@@ -1855,7 +1861,7 @@ namespace yy {
   case 159:
 
 /* Line 678 of lalr1.cc  */
-#line 943 "NscParser.ypp"
+#line 970 "NscParser.ypp"
     {
 			(yyval) = NscBuildStructDeclarationList (NULL, (yysemantic_stack_[(1) - (1)]));
 		}
@@ -1864,7 +1870,7 @@ namespace yy {
   case 160:
 
 /* Line 678 of lalr1.cc  */
-#line 947 "NscParser.ypp"
+#line 974 "NscParser.ypp"
     {
 			(yyval) = NscBuildStructDeclarationList ((yysemantic_stack_[(2) - (1)]), (yysemantic_stack_[(2) - (2)]));
 		}
@@ -1873,7 +1879,7 @@ namespace yy {
   case 161:
 
 /* Line 678 of lalr1.cc  */
-#line 954 "NscParser.ypp"
+#line 981 "NscParser.ypp"
     {
 			(yyval) = NscBuildStructDeclaration ((yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (2)]));
 		}
@@ -1882,7 +1888,7 @@ namespace yy {
   case 162:
 
 /* Line 678 of lalr1.cc  */
-#line 961 "NscParser.ypp"
+#line 988 "NscParser.ypp"
     {
 			(yyval) = NscBuildStructDeclaratorList (NULL, (yysemantic_stack_[(1) - (1)]));
 		}
@@ -1891,7 +1897,7 @@ namespace yy {
   case 163:
 
 /* Line 678 of lalr1.cc  */
-#line 965 "NscParser.ypp"
+#line 992 "NscParser.ypp"
     {
 			(yyval) = NscBuildStructDeclaratorList ((yysemantic_stack_[(3) - (1)]), (yysemantic_stack_[(3) - (3)]));
 		}
@@ -1900,7 +1906,7 @@ namespace yy {
   case 165:
 
 /* Line 678 of lalr1.cc  */
-#line 979 "NscParser.ypp"
+#line 1006 "NscParser.ypp"
     {
 			(yyval) = NscBuildTranslation (NULL, (yysemantic_stack_[(1) - (1)]));
 		}
@@ -1909,7 +1915,7 @@ namespace yy {
   case 166:
 
 /* Line 678 of lalr1.cc  */
-#line 983 "NscParser.ypp"
+#line 1010 "NscParser.ypp"
     {
 			(yyval) = NscBuildTranslation ((yysemantic_stack_[(2) - (1)]), (yysemantic_stack_[(2) - (2)]));
 		}
@@ -1918,7 +1924,7 @@ namespace yy {
   case 167:
 
 /* Line 678 of lalr1.cc  */
-#line 987 "NscParser.ypp"
+#line 1014 "NscParser.ypp"
     {
 			(yyval) = NULL;
 			if (NscBuildSyntaxError (YYCHAR_NAME, YYLVAL))
@@ -2643,24 +2649,24 @@ namespace yy {
   const unsigned short int
   parser::yyrline_[] =
   {
-         0,   123,   123,   127,   131,   135,   139,   143,   147,   150,
-     154,   158,   162,   169,   173,   177,   181,   185,   189,   196,
-     200,   207,   211,   215,   219,   223,   227,   231,   238,   242,
-     246,   250,   257,   261,   265,   272,   276,   280,   284,   291,
-     295,   299,   303,   307,   314,   318,   322,   329,   333,   340,
-     344,   351,   355,   362,   366,   373,   377,   384,   388,   395,
-     399,   403,   407,   411,   415,   419,   423,   427,   431,   435,
-     439,   443,   450,   457,   470,   470,   475,   483,   487,   491,
-     495,   499,   503,   507,   511,   515,   522,   535,   539,   547,
-     551,   559,   563,   567,   571,   575,   579,   583,   596,   603,
-     603,   607,   607,   620,   624,   631,   638,   642,   655,   655,
-     659,   683,   687,   691,   698,   706,   706,   713,   713,   726,
-     730,   730,   734,   741,   745,   749,   753,   757,   761,   765,
-     769,   776,   783,   783,   790,   803,   803,   807,   807,   811,
-     815,   822,   835,   842,   846,   853,   857,   864,   877,   884,
-     891,   895,   902,   903,   907,   911,   918,   922,   935,   942,
-     946,   953,   960,   964,   976,   978,   982,   986,  1003,  1004,
-    1005,  1006
+         0,   150,   150,   154,   158,   162,   166,   170,   174,   177,
+     181,   185,   189,   196,   200,   204,   208,   212,   216,   223,
+     227,   234,   238,   242,   246,   250,   254,   258,   265,   269,
+     273,   277,   284,   288,   292,   299,   303,   307,   311,   318,
+     322,   326,   330,   334,   341,   345,   349,   356,   360,   367,
+     371,   378,   382,   389,   393,   400,   404,   411,   415,   422,
+     426,   430,   434,   438,   442,   446,   450,   454,   458,   462,
+     466,   470,   477,   484,   497,   497,   502,   510,   514,   518,
+     522,   526,   530,   534,   538,   542,   549,   562,   566,   574,
+     578,   586,   590,   594,   598,   602,   606,   610,   623,   630,
+     630,   634,   634,   647,   651,   658,   665,   669,   682,   682,
+     686,   710,   714,   718,   725,   733,   733,   740,   740,   753,
+     757,   757,   761,   768,   772,   776,   780,   784,   788,   792,
+     796,   803,   810,   810,   817,   830,   830,   834,   834,   838,
+     842,   849,   862,   869,   873,   880,   884,   891,   904,   911,
+     918,   922,   929,   930,   934,   938,   945,   949,   962,   969,
+     973,   980,   987,   991,  1003,  1005,  1009,  1013,  1030,  1031,
+    1032,  1033
   };
 
   // Print the state stack on the debug stream.
@@ -2761,6 +2767,6 @@ namespace yy {
 
 
 /* Line 1056 of lalr1.cc  */
-#line 1009 "NscParser.ypp"
+#line 1036 "NscParser.ypp"
 
 

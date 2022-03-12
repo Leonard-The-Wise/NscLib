@@ -36,7 +36,7 @@
 # define BISON_STACK_HH
 
 #include <deque>
-#pragma warning (disable : 4267)
+
 
 /* Line 1067 of lalr1.cc  */
 #line 1 "[Bison:b4_percent_define_default]"
