@@ -1,9 +1,10 @@
-### NWScritp Compiler Library.
+### NWScritp Compiler Library - For Visual Studio 2022.
 
-This is just a personal Visual Studio 2022 port of the nwnsc project: https://github.com/nwneetools/nwnsc - but without the compíler executable, since the purpose here is to integrate the library into other projects.
+This is just a personal Visual Studio 2022 port of the nwnsc project: https://github.com/nwneetools/nwnsc - but without the compíler executable, since the purpose here is to integrate the library into other projects, especially my new [`NWScript Plugin for Notepad++`](https://github.com/Leonard-The-Wise/NWScript-Npp).
 
-The intent of these files is to facilitate integration with Visual Studio 2022 in my NWScript Plugin for Notepad++. In the original project, the CMAKE version required a GNU BISON compiler installation to parse the NscParser.ypp file. Here I already provided the output for that so no custom build step is needed. Also, updated some files to disable warnings, setup the project to be easily included in other VS Solutions, etc.
+The intent is to facilitate integration with Visual Studio 2022. In the original project, the CMAKE version required a GNU BISON compiler installation to parse the NscParser.ypp file and also it would be an heterogeneous environment to work upon, hence all here is already converted to work solely with Visual Studio 2022+ (sorry multiplataform). Here I already provided the output for the parser so no custom build step is needed. Also, updated some files to disable specific VS warnings, setup the project to be easily included in other VS Solutions, etc.
 
-Since I am not maintaining the code, if you want an upgraded version of nwnsc, go to the original project instead.
+Since I am not maintaining the included source code (because it more than suffits my needs), if you are looking for an up-to-date version of the library, go to the original project and download from there instead.
 
-That's all.
+That's all,
+Cheers.
