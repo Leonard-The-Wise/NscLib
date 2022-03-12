@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="NwnUtilLib">
+      <UniqueIdentifier>{da2d9e60-69d8-46ac-9a5d-5353377e845f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NwnDataLib">
+      <UniqueIdentifier>{e4c5a267-c834-416d-b9a0-e8862c4eb377}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NwnBaseLib">
+      <UniqueIdentifier>{0bf64bb1-40de-4c8a-95c3-533b4957317f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NscLib">
+      <UniqueIdentifier>{7e23a09a-c12d-4d04-8fc1-d782ab5bd7f4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_NscLib\location.hh">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\Nsc.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NscCodeGenerator.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NscCompat.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NscContext.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NscIntrinsicDefs.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NscParser.hpp">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NscPCodeEnumerator.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NscPStackEntry.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NscSymbolTable.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NwnDefines.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NwnDoubleLinkList.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NwnLoader.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\NwnStreams.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\position.hh">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\Precomp.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\stack.hh">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnBaseLib\BaseConstants.h">
+      <Filter>NwnBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnBaseLib\BaseTypes.h">
+      <Filter>NwnBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnBaseLib\ModelSystem.h">
+      <Filter>NwnBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnBaseLib\NWNBaseLib.h">
+      <Filter>NwnBaseLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnDataLib\BifFileReader.h">
+      <Filter>NwnDataLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnDataLib\FileWrapper.h">
+      <Filter>NwnDataLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnDataLib\KeyFileReader.h">
+      <Filter>NwnDataLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnDataLib\NWNDataLib.h">
+      <Filter>NwnDataLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnDataLib\NWScriptReader.h">
+      <Filter>NwnDataLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnDataLib\Precomp.h">
+      <Filter>NwnDataLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnDataLib\ResourceAccessor.h">
+      <Filter>NwnDataLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnDataLib\ResourceManager.h">
+      <Filter>NwnDataLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnDataLib\TextOut.h">
+      <Filter>NwnDataLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\BufferParser.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\easylogging++.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\findfirst.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\JSON.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\JSONValue.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\NWNUtilLib.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\optionparser.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\OsCompat.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\Precomp.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\ProjGlobalDefs.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\Ref.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\spec.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\version.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NwnUtilLib\VersionConstants.h">
+      <Filter>NwnUtilLib</Filter>
+    </ClInclude>
+    <ClInclude Include="_NscLib\win32_config.h">
+      <Filter>NscLib</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="_NscLib\NscCodeGenerator.cpp">
+      <Filter>NscLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NscLib\NscCompiler.cpp">
+      <Filter>NscLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NscLib\NscContext.cpp">
+      <Filter>NscLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NscLib\NscDecompiler.cpp">
+      <Filter>NscLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NscLib\NscParser.cpp">
+      <Filter>NscLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NscLib\NscParserRoutines.cpp">
+      <Filter>NscLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NscLib\NscPCodeEnumerator.cpp">
+      <Filter>NscLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NscLib\NscPStackEntry.cpp">
+      <Filter>NscLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NscLib\NwnDefines.cpp">
+      <Filter>NscLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NscLib\NwnLoader.cpp">
+      <Filter>NscLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnBaseLib\BaseTypes.cpp">
+      <Filter>NwnBaseLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnDataLib\BifFileReader.cpp">
+      <Filter>NwnDataLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnDataLib\KeyFileReader.cpp">
+      <Filter>NwnDataLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnDataLib\NWScriptReader.cpp">
+      <Filter>NwnDataLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnDataLib\ResourceManager.cpp">
+      <Filter>NwnDataLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnUtilLib\BufferParser.cpp">
+      <Filter>NwnUtilLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnUtilLib\easylogging++.cc">
+      <Filter>NwnUtilLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnUtilLib\findfirst.cpp">
+      <Filter>NwnUtilLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnUtilLib\JSON.cpp">
+      <Filter>NwnUtilLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnUtilLib\JSONValue.cpp">
+      <Filter>NwnUtilLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnUtilLib\OsCompat.cpp">
+      <Filter>NwnUtilLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnUtilLib\spec.cpp">
+      <Filter>NwnUtilLib</Filter>
+    </ClCompile>
+    <ClCompile Include="_NwnUtilLib\version.cpp">
+      <Filter>NwnUtilLib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_NscLib\NscParser.ypp">
+      <Filter>NscLib</Filter>
+    </None>
+  </ItemGroup>
+</Project>
