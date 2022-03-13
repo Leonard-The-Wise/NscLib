@@ -17,6 +17,9 @@
     <Filter Include="NscLib">
       <UniqueIdentifier>{7e23a09a-c12d-4d04-8fc1-d782ab5bd7f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Exports">
+      <UniqueIdentifier>{f04d41df-2010-41a0-8b03-cc5e482bd002}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_NscLib\location.hh">
@@ -153,6 +156,24 @@
     </ClInclude>
     <ClInclude Include="_NscLib\win32_config.h">
       <Filter>NscLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\Nsc.h">
+      <Filter>Exports</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\TextOut.h">
+      <Filter>Exports</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\ResourceManager.h">
+      <Filter>Exports</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\findfirst.h">
+      <Filter>Exports</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\easylogging++.h">
+      <Filter>Exports</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\JSON.h">
+      <Filter>Exports</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

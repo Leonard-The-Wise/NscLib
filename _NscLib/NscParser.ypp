@@ -69,7 +69,7 @@
 #include "Nsc.h"
 
 
-#pragma warning (disable : 4244 4102 4127)
+#pragma warning (disable : 4065 4102 4127 4244 4267)
 
 #ifndef __cplusplus
 #error "Parser yacc output must be compiled as C++"
