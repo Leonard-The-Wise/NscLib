@@ -47,11 +47,22 @@
 //
 //-----------------------------------------------------------------------------
 
+#include <set>
+
+#include "BaseTypes.h"
 #include "NscCompat.h"
 #include "NwnDefines.h"
 #include "NwnStreams.h"
 #include "NwnLoader.h"
-#include <set>
+#include "TextOut.h"
+#include "ResourceManager.h"
+#include "findfirst.h"
+#include "version.h"
+#include "JSON.h"
+#include "NWNBaseLib.h"
+#include "NWNDataLib.h"
+#include "NWNUtilLib.h"
+
 //-----------------------------------------------------------------------------
 //
 // Forward definitions

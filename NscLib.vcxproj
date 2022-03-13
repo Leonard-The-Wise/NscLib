@@ -19,12 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Exports\easylogging++.h" />
-    <ClInclude Include="Exports\findfirst.h" />
-    <ClInclude Include="Exports\JSON.h" />
     <ClInclude Include="Exports\Nsc.h" />
-    <ClInclude Include="Exports\ResourceManager.h" />
-    <ClInclude Include="Exports\TextOut.h" />
     <ClInclude Include="_NscLib\location.hh" />
     <ClInclude Include="_NscLib\Nsc.h" />
     <ClInclude Include="_NscLib\NscCodeGenerator.h" />

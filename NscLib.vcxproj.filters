@@ -160,21 +160,6 @@
     <ClInclude Include="Exports\Nsc.h">
       <Filter>Exports</Filter>
     </ClInclude>
-    <ClInclude Include="Exports\TextOut.h">
-      <Filter>Exports</Filter>
-    </ClInclude>
-    <ClInclude Include="Exports\ResourceManager.h">
-      <Filter>Exports</Filter>
-    </ClInclude>
-    <ClInclude Include="Exports\findfirst.h">
-      <Filter>Exports</Filter>
-    </ClInclude>
-    <ClInclude Include="Exports\easylogging++.h">
-      <Filter>Exports</Filter>
-    </ClInclude>
-    <ClInclude Include="Exports\JSON.h">
-      <Filter>Exports</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="_NscLib\NscCodeGenerator.cpp">
