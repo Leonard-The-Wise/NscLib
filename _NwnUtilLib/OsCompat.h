@@ -8,6 +8,18 @@
 #include <cstdint>
 #include <string.h>
 
+#ifndef _WINDOWS
+#define _WINDOWS
+#endif
+
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+
+#ifndef _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 #if !defined(_WIN32) && !defined(_WIN64)
 typedef int8_t CHAR;
 typedef uint8_t UCHAR;

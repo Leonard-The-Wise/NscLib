@@ -31,6 +31,14 @@
 
 #define _alloca _malloca
 
+#ifndef _WINDOWS
+#define _WINDOWS
+#endif
+
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+
 
 #pragma warning (disable : 4477 6328 6387 26439 26451 26495 26812 26813)
 

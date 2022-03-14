@@ -32,6 +32,18 @@
 #define _alloca _malloca
 
 
+#ifndef _WINDOWS
+#define _WINDOWS
+#endif
+
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+
+#ifndef _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 #pragma warning (disable : 4477 6328 6387 26439 26451 26495 26812 26813)
 
 using namespace std;

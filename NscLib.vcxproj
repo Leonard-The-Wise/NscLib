@@ -179,7 +179,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_WIN32;_WINDOWS;ELPP_LOGGING_FLAGS_FROM_ARG;ELPP_NO_DEFAULT_LOG_FILE;ELPP_UNICODE;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WIN32;_WINDOWS;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -193,7 +193,7 @@
       <WarningLevel>Level3</WarningLevel>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_WIN32;_WINDOWS;ELPP_LOGGING_FLAGS_FROM_ARG;ELPP_NO_DEFAULT_LOG_FILE;ELPP_UNICODE;NOMINMAX;_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WIN32;_WINDOWS;NOMINMAX;_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -208,7 +208,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>_WIN64;WIN64;WIN32;_WIN32;_WINDOWS;ELPP_LOGGING_FLAGS_FROM_ARG;ELPP_NO_DEFAULT_LOG_FILE;ELPP_UNICODE;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_WIN64;WIN64;WIN32;_WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -222,7 +222,7 @@
       <WarningLevel>Level3</WarningLevel>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>_WIN64;WIN64;WIN32;_WIN32;_WINDOWS;ELPP_LOGGING_FLAGS_FROM_ARG;ELPP_NO_DEFAULT_LOG_FILE;ELPP_UNICODE;NOMINMAX;_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_WIN64;WIN64;WIN32;_WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
