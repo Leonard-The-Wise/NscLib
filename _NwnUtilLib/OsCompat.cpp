@@ -5,7 +5,7 @@
 #include <sys/stat.h>
 #include "Precomp.h"
 #include "OsCompat.h"
-#include "easylogging++.h"
+//#include "easylogging++.h"
 
 std::string
 OsCompat::getFileExt(const std::string& s) {
