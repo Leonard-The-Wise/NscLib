@@ -17,6 +17,7 @@ Abstract:
 #define _PROGRAMS_NWN2DATALIB_FILEWRAPPER_H
 
 #include "OsCompat.h"
+#include <stdexcept>
 
 #if !defined(_WIN32) && !defined(_WIN64)
 #include <sys/mman.h>
