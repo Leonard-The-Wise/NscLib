@@ -44,7 +44,7 @@
 #include "NscContext.h"
 #include "NscCodeGenerator.h"
 #include "NscIntrinsicDefs.h"
-#include "../_NwnUtilLib/easylogging++.h"
+//#include "../_NwnUtilLib/easylogging++.h"
 
 //
 // Globals
@@ -1272,7 +1272,7 @@ NscCompiler::LoadResource (
 	// Try additional search paths as the highest priority.
 	//
 
-    LOG(DEBUG) << "Checking include paths";
+    //LOG(DEBUG) << "Checking include paths";
 
 	for (std::vector< std::string >::const_iterator it = m_IncludePaths .begin ();
 		  it != m_IncludePaths .end ();
@@ -1294,7 +1294,7 @@ NscCompiler::LoadResource (
 
 		if (FileContents != NULL)
 		{
-            LOG(DEBUG) << "Loaded File " << Str;
+            //LOG(DEBUG) << "Loaded File " << Str;
 
             std::string res = *it + "/" + pszName + "." + m_ResourceManager.ResTypeToExt(nResType);
 			*pfAllocated = true;
@@ -1306,7 +1306,7 @@ NscCompiler::LoadResource (
 
 			if (m_GenerateMakeDeps)
 			{
-				LOG(DEBUG) << "Resource Path " << *it;
+				//LOG(DEBUG) << "Resource Path " << *it;
 			    // ignore .bif files when adding dependencies
                 if (OsCompat::dirExists(std::string (*it).c_str())) {
                     g_Resources.insert(res);
@@ -1334,7 +1334,7 @@ NscCompiler::LoadResource (
 	// Open the file up via the resource system.
 	//
 
-    LOG(DEBUG) << "Checking resource paths";
+    //LOG(DEBUG) << "Checking resource paths";
 
     Handle = m_ResourceManager .OpenFile (ResRef, nResType);
 
@@ -1485,9 +1485,9 @@ NscCompiler::LoadResource (
 	if (m_GenerateMakeDeps)
 	{
 		// ignore .bif files when adding dependencies
-        LOG(DEBUG) << "Accessor Path " << AccessorName;
+        //LOG(DEBUG) << "Accessor Path " << AccessorName;
 		if (OsCompat::dirExists(AccessorName.c_str())) {
-		    LOG(DEBUG) << "MakeDeps Added " << res;
+		    //LOG(DEBUG) << "MakeDeps Added " << res;
 			g_Resources.insert(res);
 		}
 	}

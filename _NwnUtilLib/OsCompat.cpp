@@ -68,15 +68,15 @@ int OsCompat::dirExists(const char *path)
     struct stat info;
 
     if(stat( path, &info ) != 0) {
-        LOG(DEBUG) << "Bad Path";
+        //LOG(DEBUG) << "Bad Path";
         return 0;
     }
     else if(info.st_mode & S_IFDIR) {
-        LOG(DEBUG) << "Is a dir";
+        //LOG(DEBUG) << "Is a dir";
         return 1;
     }
     else {
-        LOG(DEBUG) << "Is not a dir";
+        //LOG(DEBUG) << "Is not a dir";
         return 0;
     }
 }

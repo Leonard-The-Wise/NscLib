@@ -52,7 +52,6 @@
     <ClInclude Include="_NwnDataLib\ResourceManager.h" />
     <ClInclude Include="_NwnDataLib\TextOut.h" />
     <ClInclude Include="_NwnUtilLib\BufferParser.h" />
-    <ClInclude Include="_NwnUtilLib\easylogging++.h" />
     <ClInclude Include="_NwnUtilLib\findfirst.h" />
     <ClInclude Include="_NwnUtilLib\JSON.h" />
     <ClInclude Include="_NwnUtilLib\JSONValue.h" />
@@ -96,7 +95,6 @@
     <ClCompile Include="_NwnDataLib\NWScriptReader.cpp" />
     <ClCompile Include="_NwnDataLib\ResourceManager.cpp" />
     <ClCompile Include="_NwnUtilLib\BufferParser.cpp" />
-    <ClCompile Include="_NwnUtilLib\easylogging++.cc" />
     <ClCompile Include="_NwnUtilLib\findfirst.cpp" />
     <ClCompile Include="_NwnUtilLib\JSON.cpp" />
     <ClCompile Include="_NwnUtilLib\JSONValue.cpp" />

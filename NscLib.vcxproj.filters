@@ -115,9 +115,6 @@
     <ClInclude Include="_NwnUtilLib\BufferParser.h">
       <Filter>NwnUtilLib</Filter>
     </ClInclude>
-    <ClInclude Include="_NwnUtilLib\easylogging++.h">
-      <Filter>NwnUtilLib</Filter>
-    </ClInclude>
     <ClInclude Include="_NwnUtilLib\findfirst.h">
       <Filter>NwnUtilLib</Filter>
     </ClInclude>
@@ -208,9 +205,6 @@
       <Filter>NwnDataLib</Filter>
     </ClCompile>
     <ClCompile Include="_NwnUtilLib\BufferParser.cpp">
-      <Filter>NwnUtilLib</Filter>
-    </ClCompile>
-    <ClCompile Include="_NwnUtilLib\easylogging++.cc">
       <Filter>NwnUtilLib</Filter>
     </ClCompile>
     <ClCompile Include="_NwnUtilLib\findfirst.cpp">
