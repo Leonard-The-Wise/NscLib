@@ -12,6 +12,7 @@ Abstract:
 	facilitates loading of the instruction byte code and data retrieval.
 
 --*/
+#include "Precomp.h"
 
 #include <cstring>
 #include <vector>

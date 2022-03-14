@@ -22,6 +22,7 @@
  * THE SOFTWARE.
  */
 
+#include "Precomp.h"
 #include "JSON.h"
 
 /**

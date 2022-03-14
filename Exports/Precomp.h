@@ -62,7 +62,8 @@ Abstract:
 #include "NWNBaseLib.h"
 #include "NWNDataLib.h"
 
-#undef assert
-#define assert NWN_ASSERT
+
+//#undef assert
+//#define assert NWN_ASSERT
 
 #endif

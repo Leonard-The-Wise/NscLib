@@ -1,3 +1,4 @@
+#include "Precomp.h"
 #include "BaseTypes.h"
 
 const NWN::Matrix44 NWN::Matrix44::IDENTITY =
