@@ -3,7 +3,7 @@
 
 #include "Precomp.h"
 #include "OsCompat.h"
-#include "easylogging++.h"
+//#include "easylogging++.h"
 
 #ifdef _MSC_VER
 #pragma once
@@ -163,7 +163,7 @@ namespace swutil
 				//
 
 				if (((PrevValue + 1) < PrevValue) || (!PrevValue)) {
-                    LOG(TRACE) << "InterlockedAddReference " << PrevValue;
+                    //LOG(TRACE) << "InterlockedAddReference " << PrevValue;
                     return false;
                 }
 
