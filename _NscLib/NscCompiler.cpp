@@ -179,7 +179,7 @@ bool NscCompilerInitialize (CNwnLoader *pLoader, int nVersion,
 				free (pauchData);
 
 			if (pTextOut)
-				pTextOut ->WriteText ("Unable to allocate memory (NscIntrinsics.nss)\n");
+				pTextOut ->WriteText ("ERROR: Unable to allocate memory (NscIntrinsics.nss)\n");
 			return false;
 		}
 
@@ -197,7 +197,7 @@ bool NscCompilerInitialize (CNwnLoader *pLoader, int nVersion,
 			free (pauchData);
 
 		if (pTextOut)
-			pTextOut ->WriteText ("Unable to allocate memory (nwscript.nss)\n");
+			pTextOut ->WriteText ("ERROR: Unable to allocate memory (nwscript.nss)\n");
 		return false;
 	}
 
@@ -219,7 +219,7 @@ bool NscCompilerInitialize (CNwnLoader *pLoader, int nVersion,
 	if (sCtx .parse () != 0 || sCtx .GetErrors () > 0)
 	{
 		if (pTextOut)
-			pTextOut ->WriteText ("Error compiling nwscript.nss\n");
+			pTextOut ->WriteText ("ERROR: Error while parsing nwscript.nss\n");
 		return false;
 	}
 
@@ -482,7 +482,7 @@ NscResult NscCompileScript (CNwnLoader *pLoader, const char *pszName,
 	if (pauchData == NULL)
 	{
 		if (pErrorOutput)
-			pErrorOutput ->WriteText ("Unable to load resource %s\n", pszName);
+			pErrorOutput ->WriteText ("ERROR: Unable to load resource %s\n", pszName);
 		return NscResult_Failure;
 	}
 
@@ -670,7 +670,7 @@ NscCompiler::NscCompileScript (
 	{
 		if (ErrorOutput != NULL)
 		{
-			ErrorOutput ->WriteText ("Failed to load resource %s.ncs.\n",
+			ErrorOutput ->WriteText ("ERROR: Failed to load resource %s.ncs.\n",
 				m_ResourceManager .StrFromResRef (ScriptName) .c_str ());
 		}
 
@@ -717,7 +717,7 @@ NscCompiler::NscCompileScript (
 
 		if (ErrorOutput != NULL)
 		{
-			ErrorOutput ->WriteText ("Exception compiling '%s.ncs': '%s'\n",
+			ErrorOutput ->WriteText ("ERROR: Exception compiling '%s.ncs': '%s'\n",
 				m_ResourceManager .StrFromResRef (ScriptName) .c_str (),
 				e.what ());
 		}
@@ -829,7 +829,7 @@ NscCompiler::NscCompileScript (
 		if (ErrorOutput != NULL)
 		{
 			ErrorOutput ->WriteText (
-				"Failed to initialize compiler; compilation aborted.\n");
+				"ERROR: Failed to initialize compiler; compilation aborted.\n");
 		}
 
 		return NscResult_Failure;
@@ -921,7 +921,7 @@ NscCompiler::NscCompileScript (
 	{
 		if (ErrorOutput != NULL)
 		{
-			ErrorOutput ->WriteText ("Exception compiling '%s.ncs': '%s'\n",
+			ErrorOutput ->WriteText ("ERROR: Exception compiling '%s.ncs': '%s'\n",
 				m_ResourceManager .StrFromResRef (ScriptName) .c_str (),
 				e.what ());
 		}
@@ -969,7 +969,7 @@ NscCompiler::NscDisassembleScript (
 			NULL,
 			this))
 		{
-			Disassembly = "DISASSEMBLY ERROR:  COMPILER INITIALIZATION FAILED";
+			Disassembly = "DISASSEMBLY ERROR: COMPILER INITIALIZATION FAILED!";
 			return;
 		}
 
@@ -1301,7 +1301,7 @@ NscCompiler::LoadResource (
 
 			if ((m_ShowIncludes) && (m_ErrorOutput != NULL))
 			{
-				m_ErrorOutput->WriteText ("ShowIncludes: Handled resource %s\n", res.c_str());
+				m_ErrorOutput->WriteText ("INFO: ShowIncludes: Handled resource %s\n", res.c_str());
 			}
 
 			if (m_GenerateMakeDeps)
@@ -1383,7 +1383,7 @@ NscCompiler::LoadResource (
 
 		if ((m_ShowIncludes) && (m_ErrorOutput != NULL))
 		{
-			m_ErrorOutput->WriteText ("ShowIncludes: Handled resource %s.%s from ResLoadFile.\n",
+			m_ErrorOutput->WriteText ("INFO: ShowIncludes: Handled resource %s.%s from ResLoadFile.\n",
 				pszName,
 				m_ResourceManager .ResTypeToExt (nResType));
 		}
@@ -1479,7 +1479,7 @@ NscCompiler::LoadResource (
 		//
 		// Print information about included files to the console.
 		//
-		m_ErrorOutput->WriteText ("ShowIncludes: Handled resource %s\n", res.c_str());
+		m_ErrorOutput->WriteText ("INFO: ShowIncludes: Handled resource %s\n", res.c_str());
 	}
 
 	if (m_GenerateMakeDeps)
