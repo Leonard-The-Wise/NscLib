@@ -2527,9 +2527,9 @@ Environment:
 		{
 			KeyFileReaderPtr KeyRes;
 
-//			printf(
-//				"ResourceManager::LoadFixedKeyFiles: Loading key file '%s'...\n",
-//				KeyFileName.c_str( ));
+			m_TextWriter->WriteText(
+				"ResourceManager::LoadFixedKeyFiles: Loading key file '%s'...\n",
+				KeyFileName.c_str( ));
 
 			KeyRes = new KeyFileReader( KeyFileName, m_InstallDir );
 
@@ -2539,7 +2539,7 @@ Environment:
 		catch (std::exception &e)
 		{
 			e;
-			printf(
+			m_TextWriter->WriteText(
 				"WARNING: Failed to open .key archive '%s': exception '%s'.\n",
 				KeyFileName.c_str( ),
 				e.what( ));
