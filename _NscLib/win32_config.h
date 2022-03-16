@@ -29,9 +29,6 @@
 #define strlwr _strlwr
 #define stricmp _stricmp
 
-#define _alloca _malloca
-
-
 #ifndef _WINDOWS
 #define _WINDOWS
 #endif
