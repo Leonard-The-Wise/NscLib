@@ -992,7 +992,8 @@ public:
 		 UINT32 CompilerFlags,
 		 std::vector< UINT8 > & Code,
 		 std::vector< UINT8 > & DebugSymbols,
-		 std::set<std::string> & Dependencies
+		 std::set<std::string> & Dependencies,
+		 bool bGenerateDebugSymbols = true
 		);
 
 	// @cmember Disassemble script from in-memory instruction stream.

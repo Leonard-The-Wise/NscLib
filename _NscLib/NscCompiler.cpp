@@ -810,7 +810,8 @@ NscCompiler::NscCompileScript (
 	 UINT32 CompilerFlags,
 	 std::vector< UINT8 > & Code,
 	 std::vector< UINT8 > & DebugSymbols,
-	 std::set<std::string> & Dependencies
+	 std::set<std::string> & Dependencies,
+	 bool bGenerateDebugSymbols
 	)
 {
 	Code.clear ();
@@ -858,19 +859,34 @@ NscCompiler::NscCompileScript (
 		// Compile the script.
 		//
 
-		Result = ::NscCompileScript (this,
-			ScriptNameStr.c_str (),
-			(unsigned char *) ScriptText,
-			(UINT32) ScriptTextLength,
-			false,
-			CompilerVersion,
-			Optimize,
-			IgnoreIncludes,
-			&CodeStream,
-			&SymbolsStream,
-			ErrorOutput,
-			this,
-			CompilerFlags);
+		if (bGenerateDebugSymbols)
+			Result = ::NscCompileScript(this,
+				ScriptNameStr.c_str(),
+				(unsigned char*)ScriptText,
+				(UINT32)ScriptTextLength,
+				false,
+				CompilerVersion,
+				Optimize,
+				IgnoreIncludes,
+				&CodeStream,
+				&SymbolsStream,
+				ErrorOutput,
+				this,
+				CompilerFlags);
+		else
+			Result = ::NscCompileScript(this,
+				ScriptNameStr.c_str(),
+				(unsigned char*)ScriptText,
+				(UINT32)ScriptTextLength,
+				false,
+				CompilerVersion,
+				Optimize,
+				IgnoreIncludes,
+				&CodeStream,
+				NULL,
+				ErrorOutput,
+				this,
+				CompilerFlags);
 
 		m_ErrorOutput = NULL;
 		m_ShowIncludes = false;
