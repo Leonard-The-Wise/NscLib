@@ -635,7 +635,10 @@ public:
 			pEntry ->nFile = (int) m_asFiles .size ();
 			const char *pszBaseName = NwnBasename (pszFileName);
 			size_t nLength = strlen (pszBaseName);
+#pragma warning (push)
+#pragma warning (disable : 6255)
 			char *pszCopy = (char *) alloca (nLength + 1);
+#pragma warning (pop)
 			strcpy (pszCopy, pszBaseName);
 			char *pszExt = strrchr (pszCopy, '.');
 			if (pszExt)

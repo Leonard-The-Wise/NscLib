@@ -285,7 +285,10 @@ NscResult NscCompileScript (CNwnLoader *pLoader, const char *pszName,
 	if (strchr (pszName, '.') == NULL)
 	{
 		size_t nLength = strlen (pszName);
+#pragma warning (push)
+#pragma warning (disable : 6255)
 		pszFullName = (char *) alloca (nLength + 5);
+#pragma warning (pop)
 		strcpy (pszFullName, pszName);
 		strcat (pszFullName, ".nss");
 	}
