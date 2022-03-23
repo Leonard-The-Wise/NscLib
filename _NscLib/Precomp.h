@@ -20,9 +20,15 @@ Abstract:
 #pragma once
 #endif
 
+#ifndef _CRT_SECURE_NO_DEPRECATE
 #define _CRT_SECURE_NO_DEPRECATE
+#endif
+#ifndef _CRT_SECURE_NO_DEPRECATE_GLOBALS
 #define _CRT_SECURE_NO_DEPRECATE_GLOBALS
+#endif
+#ifndef STRSAFE_NO_DEPRECATE
 #define STRSAFE_NO_DEPRECATE
+#endif
 
 #if defined(_WINDOWS)
 
