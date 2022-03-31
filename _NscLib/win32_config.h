@@ -1,9 +1,6 @@
-/** @file LineIndentor.cpp
+/** @file win32_config.h
  * Win32 configuration for NscLib.
  * 
- * 
- * 
- *
  **/
  // Copyright (C) 2022 - Leonardo Silva 
  // The License.txt file describes the conditions under which this software may be distributed.
