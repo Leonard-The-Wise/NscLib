@@ -1,4 +1,4 @@
-### NWScritp Compiler Library - For Visual Studio 2022.
+### NWScript Compiler Library - For Visual Studio 2022.
 
 This is just a personal Visual Studio 2022 port of the nwnsc project: https://github.com/nwneetools/nwnsc - but without the compiler executable, since the purpose here is to integrate the library into other projects, especially my new [`NWScript Plugin for Notepad++`](https://github.com/Leonard-The-Wise/NWScript-Npp).
 
