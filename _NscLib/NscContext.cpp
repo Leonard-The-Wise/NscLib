@@ -859,7 +859,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 		// Error messages
 
 		case NscMessage_ErrorInternalCompilerError:
-			GenerateError ("%sInternal compiler error: %s", szPrefix,
+			GenerateError ("%sInternal compiler error: %s.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
@@ -873,7 +873,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 
 				GenerateError ("%sType mismatch in parameter %d "
 					"(\"%s\") in call to \"%s\": Expected type \"%s\", but "
-					"got type \"%s\"", szPrefix,
+					"got type \"%s\".", szPrefix,
 					nArgNumber,
 					pszArgument,
 					pszFunction,
@@ -884,21 +884,21 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 
 		case NscMessage_ErrorOperatorTypeMismatch:
 			GenerateError ("%sOperator (%s) not valid for "
-				"specified types", szPrefix,
+				"specified types.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorAssignLHSNotVariable:
-			GenerateError ("%sLeft hand side of assignment not a variable",
+			GenerateError ("%sLeft hand side of assignment not a variable.",
 				szPrefix);
 			break;
 
 		case NscMessage_ErrorUnexpectedEOF:
-			GenerateError ("%sUnexpected EOF", szPrefix);
+			GenerateError ("%sUnexpected EOF.", szPrefix);
 			break;
 
 		case NscMessage_ErrorTooManyFunctionArgs:
-			GenerateError ("%sToo many arguments specified in call to \"%s\" ",
+			GenerateError ("%sToo many arguments specified in call to \"%s\".",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
@@ -908,126 +908,126 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				const char *pszFnName = va_arg (marker, const char *);
 
 				GenerateError ("%sRequired argument \"%s\" missing in call to "
-					"\"%s\" ", szPrefix, pszArgName, pszFnName);
+					"\"%s\".", szPrefix, pszArgName, pszFnName);
 			}
 			break;
 
 		case NscMessage_ErrorPreprocessorSyntax:
-			GenerateError ("%s%s syntax", szPrefix,
+			GenerateError ("%s%s syntax.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorPreprocessorIdentTooLong:
-			GenerateError ("%s%s identifier too long", szPrefix,
+			GenerateError ("%s%s identifier too long.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorUserError:
-			GenerateError ("%s#error: %s", szPrefix,
+			GenerateError ("%s#error: %s.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorInvalidPreprocessorToken:
-			GenerateError ("%sInvalid preprocessor token", szPrefix);
+			GenerateError ("%sInvalid preprocessor token.", szPrefix);
 			break;
 
 		case NscMessage_ErrorMacroReplacementTooLong:
 			GenerateError ("%sPreprocessor macro replacement exceeds maximum "
-				"line length of %d", szPrefix, va_arg (marker, int));
+				"line length of %d.", szPrefix, va_arg (marker, int));
 			break;
 
 		case NscMessage_ErrorTokenTooLong:
-			GenerateError ("%sToken too long", szPrefix);
+			GenerateError ("%sToken too long.", szPrefix);
 			break;
 
 		case NscMessage_ErrorDefineUnknownOrInvalid:
-			GenerateError ("%s#define unknown or invalid definition", szPrefix);
+			GenerateError ("%s#define unknown or invalid definition.", szPrefix);
 			break;
 
 		case NscMessage_ErrorFunctionLikeMacroNotAllowed:
 			GenerateError ("%sFunction-like macro not permitted in this "
-				"context", szPrefix);
+				"context.", szPrefix);
 			break;
 
 		case NscMessage_ErrorFunctionLikeMacroNotImpl:
-			GenerateError ("%sFunction-like macros are not implemented",
+			GenerateError ("%sFunction-like macros are not implemented.",
 				szPrefix);
 			break;
 
 		case NscMessage_ErrorFuncNameMacroNotInFunction:
 			GenerateError ("%sPredefined macro \"__FUNCTION__\" must be used"
-				" within a function body", szPrefix);
+				" within a function body.", szPrefix);
 			break;
 
 		case NscMessage_ErrorNscIntrinsicsIsInternalOnly:
 			GenerateError ("%s#pragma nsc_intrinsics is reserved for internal"
-				" compiler use only", szPrefix);
+				" compiler use only.", szPrefix);
 			break;
 
 		case NscMessage_ErrorPragmaDefaultFuncNotInFunc:
 			GenerateError ("%s#pragma default_function may not be used within a"
-				" function body", szPrefix);
+				" function body.", szPrefix);
 			break;
 
 		case NscMessage_ErrorUndeclaredIdentifier:
-			GenerateError ("%sUndeclared identifier \"%s\"", szPrefix,
+			GenerateError ("%sUndeclared identifier \"%s\".", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorIdentifierNotFunction:
-			GenerateError ("%sIdentifier \"%s\" is not a function", szPrefix,
+			GenerateError ("%sIdentifier \"%s\" is not a function.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorPragmaDefaultFuncAlreadyDef:
 			GenerateError ("%sFunction \"%s\" is already defined; #pragma"
 				" default_function may be used only on function identifiers that"
-				" are declared but not yet defined", szPrefix,
+				" are declared but not yet defined.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorEntryPointCannotBeDefault:
-			GenerateError ("%sEntry point function \"%s\" cannot be defaulted",
+			GenerateError ("%sEntry point function \"%s\" cannot be defaulted.",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorPreprocessorSyntaxConstExpr:
-			GenerateError ("%s%s syntax (constant integer expression required)",
+			GenerateError ("%s%s syntax (constant integer expression required).",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorPoundElifWithoutPoundIf:
-			GenerateError ("%sUnexpected #elif encountered (no matching #if)",
+			GenerateError ("%sUnexpected #elif encountered (no matching #if).",
 				szPrefix);
 			break;
 
 		case NscMessage_ErrorDuplicatePoundElse:
 			GenerateError ("%sUnexpected #else encountered (only one #else per "
-				"#if is permitted)", szPrefix);
+				"#if is permitted).", szPrefix);
 			break;
 
 		case NscMessage_ErrorPoundElseWithoutPoundIf:
-			GenerateError ("%sUnexpected #else encountered (no matching #if)",
+			GenerateError ("%sUnexpected #else encountered (no matching #if).",
 				szPrefix);
 			break;
 
 		case NscMessage_ErrorUnexpectedPoundEndif:
-			GenerateError ("%sUnexpected #endif encountered (no matching #if)",
+			GenerateError ("%sUnexpected #endif encountered (no matching #if).",
 				szPrefix);
 			break;
 
 		case NscMessage_ErrorUnrecognizedIntrinsicIdent:
-			GenerateError ("%sUnexpected intrinsic identifier \"%s\"", szPrefix,
+			GenerateError ("%sUnexpected intrinsic identifier \"%s\".", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorTooManyStructures:
-			GenerateError ("%sToo many defined structures, limit of %d",
+			GenerateError ("%sToo many defined structures, limit of %d.",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorStringLiteralTooLong:
-			GenerateError ("%sString literal too long", szPrefix);
+			GenerateError ("%sString literal too long.", szPrefix);
 			break;
 
 		case NscMessage_ErrorUnterminatedString:
@@ -1035,22 +1035,22 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 			break;
 
 		case NscMessage_ErrorEntrySymbolMustBeFunction:
-			GenerateError ("%sEntry point symbol \"%s\" must be a function",
+			GenerateError ("%sEntry point symbol \"%s\" must be a function.",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorEntrySymbolNotFound:
-			GenerateError ("%sNo \"main\" or \"StartingConditional\" found",
+			GenerateError ("%sNo \"main\" or \"StartingConditional\" found.",
 				szPrefix);
 			break;
 
 		case NscMessage_ErrorScriptTooLarge:
-			GenerateError ("%sCompiled script too large",
+			GenerateError ("%sCompiled script too large.",
 				szPrefix);
 			break;
 
 		case NscMessage_ErrorInvalidNumArgsForIntrinsic:
-			GenerateError ("%sInvalid number of arguments for intrinsic \"%s\"",
+			GenerateError ("%sInvalid number of arguments for intrinsic \"%s\".",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
@@ -1059,42 +1059,42 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				const char *pszSymbol = va_arg (marker, const char *);
 				NscType nType = static_cast<NscType>(va_arg (marker, int));
 
-				GenerateError ("%sEntry point symbol \"%s\" must return type \"%s\"",
+				GenerateError ("%sEntry point symbol \"%s\" must return type \"%s\".",
 					szPrefix, pszSymbol, GetTypeName (nType));
 			}
 			break;
 
 		case NscMessage_ErrorFunctionBodyMissing:
 			GenerateError ("%sFunction \"%s\" was referenced, but no function "
-				"body was supplied. ", szPrefix, va_arg (marker, const char *));
+				"body was supplied.", szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorNotAllPathsReturnValue:
-			GenerateError ("%sNot all paths return a value", szPrefix);
+			GenerateError ("%sNot all paths return a value.", szPrefix);
 			break;
 
 		case NscMessage_ErrorTokenSyntaxError:
-			GenerateError ("%sSyntax error at \"%s\"", szPrefix,
+			GenerateError ("%sSyntax error at \"%s\".", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorTooManyErrors:
 			GenerateError ("%sCompiler has reached the limit of %d errors, "
-				"aborting", szPrefix, va_arg (marker, int));
+				"aborting.", szPrefix, va_arg (marker, int));
 			break;
 
 		case NscMessage_ErrorInternalOnlyIdentifier:
 			GenerateError ("%s\"%s\" identifier only valid in the context of "
-				"\"nwscript.nss\"", szPrefix, va_arg (marker, const char *));
+				"\"nwscript.nss\".", szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorStructureUndefined:
-			GenerateError ("%sStructure \"%s\" is undefined", szPrefix,
+			GenerateError ("%sStructure \"%s\" is undefined.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorIdentifierNotStructure:
-			GenerateError ("%sIdentifier \"%s\" is not a structure", szPrefix,
+			GenerateError ("%sIdentifier \"%s\" is not a structure.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
@@ -1108,13 +1108,13 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				if (GetSymbolDefinitionLocation (pSymbol, &nFile, &nLine))
 				{
 					GenerateError ("%sVariable \"%s\" defined multiple times "
-						"in the same scope (previous definition at %s(%d))",
+						"in the same scope (previous definition at %s(%d)).",
 						szPrefix, pszId, GetSourceFileName (nFile), nLine);
 				}
 				else
 				{
 					GenerateError ("%sVariable \"%s\" defined multiple times "
-						"in the same scope", szPrefix, pszId);
+						"in the same scope.", szPrefix, pszId);
 				}
 			}
 			break;
@@ -1129,12 +1129,12 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				if (GetSymbolDefinitionLocation (pSymbol, &nFile, &nLine))
 				{
 					GenerateError ("%sIdentifier \"%s\" is already defined at "
-						"%s(%d)", szPrefix, pszId, GetSourceFileName (nFile),
+						"%s(%d).", szPrefix, pszId, GetSourceFileName (nFile),
 						nLine);
 				}
 				else
 				{
-					GenerateError ("%sIdentifier \"%s\" is already defined",
+					GenerateError ("%sIdentifier \"%s\" is already defined.",
 						szPrefix, pszId);
 				}
 			}
@@ -1142,7 +1142,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 
 		case NscMessage_ErrorConstNotAllowedOnLocals:
 			GenerateError ("%s\"const\" qualifier not allowed on local variables "
-				"(see declaration of \"%s\")", szPrefix,
+				"(see declaration of \"%s\").", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
@@ -1152,56 +1152,56 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				const char *pszId = va_arg (marker, const char *);
 
 				GenerateError ("%sDefault initializer not permitted for type \"%s\" "
-					"of constant \"%s\"", szPrefix, GetTypeName (nType), pszId);
+					"of constant \"%s\".", szPrefix, GetTypeName (nType), pszId);
 			}
 			break;
 
 		case NscMessage_ErrorConstInitializerMissing:
-			GenerateError ("%sRequired value for constant \"%s\" missing",
+			GenerateError ("%sRequired value for constant \"%s\" missing.",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorConstInitializerNotConstExp:
-			GenerateError ("%sNon-constant value specified for constant \"%s\"",
+			GenerateError ("%sNon-constant value specified for constant \"%s\".",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorConstReferencedBeforeInit:
 			GenerateError ("%sConstant \"%s\" must be initialized before it may "
-				"be referenced", szPrefix, va_arg (marker, const char *));
+				"be referenced.", szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorConstStructIllegal:
 			GenerateError ("%sStructure-typed variable \"%s\" may not be "
 					"declared as \"const\" (only basic types may be declared "
-					"\"const\")", szPrefix, va_arg (marker, const char *));
+					"\"const\").", szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorDeclInitTypeMismatch:
 			GenerateError ("%sDeclaration and initialization value type mismatch "
-				"for variable \"%s\"", szPrefix, va_arg (marker, const char *));
+				"for variable \"%s\".", szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorConstIllegalOnParameter:
 			GenerateError ("%s\"const\" qualifier not allowed in function "
-				"prototype (see declaration of \"%s\")", szPrefix,
+				"prototype (see declaration of \"%s\").", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorParamDefaultInitNotConstExp:
 			GenerateError ("%sNon-constant default value specified for function "
-				"prototype parameter \"%s\"", szPrefix,
+				"prototype parameter \"%s\".", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorParamDeclTypeMismatch:
 			GenerateError ("%sType mismatch in the declaration of the function "
-				"parameter \"%s\"", szPrefix, va_arg (marker, const char *));
+				"parameter \"%s\".", szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorConstReturnTypeIllegal:
 			GenerateError ("%s\"const\" qualifier not allowed on function return "
-				"type (see declaration of \"%s\")", szPrefix,
+				"type (see declaration of \"%s\").", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
@@ -1211,7 +1211,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				const char *pszArg = va_arg(marker, const char *);
 
 				GenerateError ("%sFunction \"%s\" parameter \"%s\" without a "
-					"default value can't follow one with a default value",
+					"default value can't follow one with a default value.",
 					szPrefix, pszFn, pszArg);
 			}
 			break;
@@ -1222,7 +1222,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				int nMaxArgs = va_arg (marker, int);
 
 				GenerateError ("%sFunction \"%s\" exceeds the maximum argument "
-					"limit (%d)", szPrefix, pszFn, nMaxArgs);
+					"limit (%d).", szPrefix, pszFn, nMaxArgs);
 			}
 			break;
 
@@ -1236,13 +1236,13 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				if (GetSymbolDefinitionLocation (pSymbol, &nFile, &nLine))
 				{
 					GenerateError ("%sFunction symbol \"%s\" is also used as "
-						"a non-function symbol type at %s(%d)", szPrefix,
+						"a non-function symbol type at %s(%d).", szPrefix,
 						pszId, GetSourceFileName (nFile), nLine);
 				}
 				else
 				{
 					GenerateError ("%sFunction symbol \"%s\" is also used as "
-						"a non-function symbol type", szPrefix, pszId);
+						"a non-function symbol type.", szPrefix, pszId);
 				}
 			}
 			break;
@@ -1257,13 +1257,13 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				if (GetSymbolDefinitionLocation (pSymbol, &nFile, &nLine))
 				{
 					GenerateError ("%sFunction \"%s\"'s prototype doesn't match"
-						" the declaration (prototype at %s(%d))", szPrefix,
+						" the declaration (prototype at %s(%d)).", szPrefix,
 						pszId, GetSourceFileName (nFile), nLine);
 				}
 				else
 				{
 					GenerateError ("%sFunction \"%s\"'s prototype doesn't match"
-						" the declaration", szPrefix, pszId);
+						" the declaration.", szPrefix, pszId);
 				}
 			}
 			break;
@@ -1278,20 +1278,20 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				if (GetSymbolDefinitionLocation (pSymbol, &nFile, &nLine))
 				{
 					GenerateError ("%sFunction \"%s\" already has a body "
-						"defined at %s(%d)", szPrefix, pszId,
+						"defined at %s(%d).", szPrefix, pszId,
 						GetSourceFileName (nFile), nLine);
 				}
 				else
 				{
 					GenerateError ("%sFunction \"%s\" already has a body "
-						"defined", szPrefix, pszId);
+						"defined.", szPrefix, pszId);
 				}
 			}
 			break;
 
 		case NscMessage_ErrorConstIllegalOnStructMember:
 			GenerateError ("%s\"const\" qualifier not allowed in structure "
-				"definition", szPrefix);
+				"definition.", szPrefix);
 			break;
 
 		case NscMessage_ErrorStructureRedefined:
@@ -1304,12 +1304,12 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				if (GetSymbolDefinitionLocation (pSymbol, &nFile, &nLine))
 				{
 					GenerateError ("%sStructure \"%s\" redefined (previous "
-						"definition at %s(%d))", szPrefix, pszId,
+						"definition at %s(%d)).", szPrefix, pszId,
 						GetSourceFileName (nFile), nLine);
 				}
 				else
 				{
-					GenerateError ("%sStructure \"%s\" redefined", szPrefix,
+					GenerateError ("%sStructure \"%s\" redefined.", szPrefix,
 						pszId);
 				}
 			}
@@ -1325,133 +1325,133 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				if (GetSymbolDefinitionLocation (pSymbol, &nFile, &nLine))
 				{
 					GenerateError ("%sSymbol \"%s\" is already defined as a "
-						"non-structure type at %s(%d)", szPrefix, pszId,
+						"non-structure type at %s(%d).", szPrefix, pszId,
 						GetSourceFileName (nFile), nLine);
 				}
 				else
 				{
 					GenerateError ("%sSymbol \"%s\" is already defined as a "
-						"non-structure type", szPrefix, pszId);
+						"non-structure type.", szPrefix, pszId);
 				}
 			}
 			break;
 
 		case NscMessage_ErrorDeclarationSkippedByToken:
 			GenerateError ("%sVariable declaration skipped by \"%s\" "
-				"statement (consider enclosing declaration in braces)",
+				"statement (consider enclosing declaration in braces).",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorMultipleDefaultLabels:
-			GenerateError ("%sMultiple 'default' switch blocks", szPrefix);
+			GenerateError ("%sMultiple 'default' switch blocks.", szPrefix);
 			break;
 
 		case NscMessage_ErrorInvalidUseOfFunction:
-			GenerateError ("%sInvalid use of function \"%s\"", szPrefix,
+			GenerateError ("%sInvalid use of function \"%s\".", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorInvalidUseOfStructure:
-			GenerateError ("%sInvalid use of the structure name \"%s\"",
+			GenerateError ("%sInvalid use of the structure name \"%s\".",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorElementNotMemberOfStructure:
-			GenerateError ("%sElement \"%s\" is not a member of the structure",
+			GenerateError ("%sElement \"%s\" is not a member of the structure.",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorInvalidAccessOfValAsStruct:
-			GenerateError ("%sInvalid access of a value as a structure",
+			GenerateError ("%sInvalid access of a value as a structure.",
 				szPrefix);
 			break;
 
 		case NscMessage_ErrorCantInvokeIdentAsFunction:
-			GenerateError ("%sCan't invoke \"%s\" as a function", szPrefix,
+			GenerateError ("%sCan't invoke \"%s\" as a function.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorConditionalRequiresInt:
 			GenerateError ("%sConditional requires integer expression for "
-				"selector", szPrefix);
+				"selector.", szPrefix);
 			break;
 
 		case NscMessage_ErrorConditionalResultTypesBad:
 			GenerateError ("%sResulting values for in a conditional must "
-				"match", szPrefix);
+				"match.", szPrefix);
 			break;
 
 		case NscMessage_ErrorConditionalTokenRequiresInt:
 			GenerateError ("%s\"%s\" requires integer expression as the "
-				"conditional", szPrefix, va_arg (marker, const char *));
+				"conditional.", szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorCaseValueNotConstant:
 			GenerateError ("%sNon-constant value specified for \"case\" "
-				"statement", szPrefix);
+				"statement.", szPrefix);
 			break;
 
 		case NscMessage_ErrorReturnValueExpected:
-			GenerateError ("%sReturn value expected", szPrefix);
+			GenerateError ("%sReturn value expected.", szPrefix);
 			break;
 
 		case NscMessage_ErrorReturnValueIllegalOnVoidFn:
-			GenerateError ("%sReturn value specified for a \"void\" function",
+			GenerateError ("%sReturn value specified for a \"void\" function.",
 				szPrefix);
 			break;
 
 		case NscMessage_ErrorTypeMismatchOnReturn:
-			GenerateError ("%sType mismatch on return", szPrefix);
+			GenerateError ("%sType mismatch on return.", szPrefix);
 			break;
 
 		case NscMessage_ErrorReturnOutsideFunction:
 			GenerateError ("%sReturn statement outside the scope of a "
-				"function", szPrefix);
+				"function.", szPrefix);
 			break;
 
 		case NscMessage_ErrorInvalidUseOfBreak:
 			GenerateError ("%s\"break\" statement only allowed in \"switch\", "
-				"\"do\", \"while\", and \"for\" statements", szPrefix);
+				"\"do\", \"while\", and \"for\" statements.", szPrefix);
 			break;
 
 		case NscMessage_ErrorInvalidUseOfContinue:
 			GenerateError ("%s\"continue\" statement only allowed in \"do\", "
-				"\"while\", and \"for\" statements", szPrefix);
+				"\"while\", and \"for\" statements.", szPrefix);
 			break;
 
 		case NscMessage_ErrorEOFReachedInPoundIfdef:
 			GenerateError ("%sUnexpected end of file encountered while "
-				"matching preprocessor #if conditional construct", szPrefix);
+				"matching preprocessor #if conditional construct.", szPrefix);
 			break;
 
 		case NscMessage_ErrorTooLongIncludeFileName:
-			GenerateError ("%sToo long include filename", szPrefix);
+			GenerateError ("%sToo long include filename.", szPrefix);
 			break;
 
 		case NscMessage_ErrorUnableToOpenInclude:
-			GenerateError ("%sUnable to open the include file \"%s\"",
+			GenerateError ("%sUnable to open the include file \"%s\".",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorPreprocessorOperandTooLong:
-			GenerateError ("%s%s operand too long", szPrefix,
+			GenerateError ("%s%s operand too long.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorBadDefineIdentPrefix:
 			GenerateError ("%s#define identifier \"%s\" must start with an "
-				"underscore or an alpha character", szPrefix,
+				"underscore or an alpha character.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorBadDefineIdentCharacters:
 			GenerateError ("%s#define identifier \"%s\" must contain only "
-				"underscores and alphanumeric characters", szPrefix,
+				"underscores and alphanumeric characters.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_ErrorDuplicateCaseValue:
-			GenerateError ("%sCase value '%d' already used", szPrefix,
+			GenerateError ("%sCase value \"%d\" already used.", szPrefix,
 				va_arg (marker, int));
 			break;
 
@@ -1459,36 +1459,36 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 		// Warning messages
 
 		case NscMessage_WarningMacroRedefinition:
-			GenerateWarning ("%sMacro redefinition: \"%s\"",
+			GenerateWarning ("%sMacro redefinition: \"%s\".",
 				szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_WarningNestedStructAccess:
 			GenerateWarning (
 				"%sNested structure element access may generate incorrect "
-				"code or may fail to compile with the standard compiler; "
-				"consider avoiding nested structures", szPrefix);
+				"code or may fail to compile with the standard compiler. "
+				"Consider avoiding nested structures.", szPrefix);
 			break;
 
 		case NscMessage_WarningConstantValueDefaulted:
 			GenerateWarning (
 				"%sRequired value for constant \"%s\" missing;"
-				" generating default initializer",
+				" generating default initializer.",
 				szPrefix, va_arg (marker, const char *));
 				break;
 
 		case NscMessage_WarningEmptyControlStatement:
 			GenerateWarning ("%s\"if\" or \"else\" statement "
-				"followed by a blank statement. (i.e. if (x);)", szPrefix);
+				"followed by a blank statement. (i.e. if (x);).", szPrefix);
 			break;
 
 		case NscMessage_WarningUserWarning:
-			GenerateWarning ("%s#warning: %s", szPrefix,
+			GenerateWarning ("%s#warning: %s.", szPrefix,
 				va_arg (marker, const char *));
 			break;
 
 		case NscMessage_WarningEOFReachedInComment:
-			GenerateWarning ("%sEnd of file reached while processing comment",
+			GenerateWarning ("%sEnd of file reached while processing comment.",
 				szPrefix);
 			break;
 
@@ -1496,7 +1496,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 			{
 			    char c = (char)va_arg(marker, int);
 				GenerateWarning ("%sInvalid character '%c' (0x%02X) "
-					"found in source, ignored", szPrefix, c, c);
+					"found in source, ignored.", szPrefix, c, c);
 			}
 			break;
 
@@ -1504,7 +1504,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 			GenerateWarning (
 				"%sInvocations to functions with \"action\"-typed arguments at"
 				" global scope are not supported; compiled script may not run."
-				"  Consider moving \"action\" references within a function.",
+				" Consider moving \"action\" references within a function.",
 				szPrefix);
 			break;
 
@@ -1512,7 +1512,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 			GenerateWarning (
 				"%sInvocation of function \"%s\" using global"
 				" variables at global scope is not supported;"
-				" compiled script may not run.  Consider"
+				" compiled script may not run. Consider"
 				" calling functions that require global"
 				" variables from within the script entry"
 				" point symbol's call tree instead.",
@@ -1529,7 +1529,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 					" for argument \"%s\", but the runtime will select"
 					" default argument values from a hardcoded list of"
 					" defaults for script entry point symbols."
-					"  Consider removing explicit default arguments"
+					" Consider removing explicit default arguments"
 					" from the function and handling the actual runtime"
 					" default values (which are zero, OBJECT_INVALID,"
 					" and an empty string, as appropriate).",
@@ -1545,7 +1545,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				int nMaxArgs = va_arg (marker, int);
 
 				GenerateWarning ("%sFunction \"%s\" exceeds the maximum "
-					"argument limit of the standard compiler (%d).  Consider "
+					"argument limit of the standard compiler (%d). Consider "
 					"reducing the number of arguments to ensure compatibility "
 					"with the standard compiler",
 					szPrefix, pszFn, nMaxArgs);
@@ -1564,60 +1564,60 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 					GenerateWarning ("%sFunction \"%s\"'s prototype return "
 						"value doesn't match the declaration, changing "
 						"prototype to match the declaration (prototype at "
-						"%s(%d))", szPrefix, pszId,
+						"%s(%d)).", szPrefix, pszId,
 						GetSourceFileName (nFile), nLine);
 				}
 				else
 				{
 					GenerateWarning ("%sFunction \"%s\"'s prototype return "
 						"value doesn't match the declaration, changing "
-						"prototype to match the declaration", szPrefix, pszId);
+						"prototype to match the declaration.", szPrefix, pszId);
 				}
 			}
 			break;
 
 		case NscMessage_WarningSwitchInDoWhile:
 			GenerateWarning ("%sUsage of switch blocks inside of do/while "
-				"scopes generates incorrect code with the standard compiler; "
-				"consider avoiding the use of do/while constructs to ensure "
-				"correct code generation with the standard compiler",
+				"scopes generates incorrect code with the standard compiler. "
+				"Consider avoiding the use of do/while constructs to ensure "
+				"correct code generation with the standard compiler.",
 				szPrefix);
 			break;
 
 		case NscMessage_WarningForIncNotIntegralType:
 			GenerateWarning ("%sNon-standard extension used (increment block "
-				"of for expression has non-integer type); consider using only "
-				"integer types for compatibility with the standard compiler",
+				"of for expression has non-integer type). Consider using only "
+				"integer types for compatibility with the standard compiler.",
 				szPrefix);
 			break;
 
 		case NscMessage_WarningForInitNotIntegralType:
 			GenerateWarning ("%sNon-standard extension used (initialization "
-				"block of for expression has non-integer type); consider "
+				"block of for expression has non-integer type). Consider "
 				"using only integer types for compatibility with the standard "
-				"compiler", szPrefix);
+				"compiler.", szPrefix);
 			break;
 
 		case NscMessage_WarningCaseDefaultOutsideSwitch:
 			GenerateWarning ("%s\"case\" and \"default\" statements should be "
-				"specified inside a \"switch\" statement", szPrefix);
+				"specified inside a \"switch\" statement.", szPrefix);
 			break;
 
 		case NscMessage_WarningIdentUsedInInitializer:
 			GenerateWarning ("%s\"%s\" referenced in initialization "
-				"expression", szPrefix, va_arg (marker, const char *));
+				"expression.", szPrefix, va_arg (marker, const char *));
 			break;
 
 		case NscMessage_WarningUnsupportedPragmaIgnored:
-			GenerateWarning ("%sUnsupported #pragma directive ignored",
+			GenerateWarning ("%sUnsupported #pragma directive ignored.",
 				szPrefix);
 			break;
 
 		case NscMessage_WarningCompatIdentListExceeded:
 			GenerateWarning ("%sNon-constant global variable count exceeds "
 				"the standard compiler's maximum named stack variable depth "
-				"(%d); the standard compiler may not be able to compile the "
-				"script.  Consider removing excess global variables.",
+				"(%d). The standard compiler may not be able to compile the "
+				"script. Consider removing excess global variables.",
 				szPrefix, va_arg (marker, int));
 			break;
 
@@ -1629,7 +1629,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 				GenerateWarning ("%sFunction \"%s\" exceeds the standard "
 					"compiler's maximum named stack variable depth (%d); "
 					"the standard compiler may not be able to compile the "
-					"script.  Consider reducing the number of local or global "
+					"script. Consider reducing the number of local or global "
 					"variables such that no more than %d local or global "
 					"variables are visible within global scope or within any "
 					"one function scope at a time.",
@@ -1640,7 +1640,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 		case NscMessage_WarningNestedRHSAssign:
 			GenerateWarning ("%sThe standard compiler does not support "
 				"nested assignment RHS expressions that are themselves an "
-				"assignment type expression.  Consider encapsulating the "
+				"assignment type expression. Consider encapsulating the "
 				"right-hand-side expression in parens (), or unwrapping "
 				"the nested assignment for compatibility with the standard "
 				"compiler.",
@@ -1658,7 +1658,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 
 				GenerateWarning ("%sFunction \"%s\" argument \"%s\" default "
 					"value does not match the initializer value for a "
-					"previous declaration.  The first declaration value will "
+					"previous declaration. The first declaration value will "
 					"be used.", szPrefix, pszFn, pszArg);
 			}
 			break;
@@ -1669,7 +1669,7 @@ void CNscContext::GenerateMessage (NscMessage nMessage, ...)
 
 		default:
 
-			GenerateError ("%sUnknown diagnostic message",
+			GenerateError ("%sUnknown diagnostic message.",
 				szPrefix);
 			assert (false);
 			break;
