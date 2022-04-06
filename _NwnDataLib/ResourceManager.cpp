@@ -2528,7 +2528,7 @@ Environment:
 			KeyFileReaderPtr KeyRes;
 
 			m_TextWriter->WriteText(
-				"INFO: ResourceManager::LoadFixedKeyFiles: Loading key file '%s'...\n",
+				"INFO: ResourceManager::LoadFixedKeyFiles: Loading key file '%s'.\n",
 				KeyFileName.c_str( ));
 
 			KeyRes = new KeyFileReader( KeyFileName, m_InstallDir );
