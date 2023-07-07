@@ -140,6 +140,15 @@ bool NscCompilerInitialize (CNwnLoader *pLoader, int nVersion,
 	NscAddToken ("OBJECT_SELF",    OBJECT_SELF_CONST, pCompiler);
 	NscAddToken ("OBJECT_INVALID", OBJECT_INVALID_CONST, pCompiler);
 
+	NscAddToken ("LOCATION_INVALID", LOCATION_INVALID_CONST, pCompiler);
+
+	NscAddToken ("JSON_NULL", JSON_NULL_CONST, pCompiler);
+	NscAddToken ("JSON_FALSE", JSON_FALSE_CONST, pCompiler);
+	NscAddToken ("JSON_TRUE", JSON_TRUE_CONST, pCompiler);
+	NscAddToken ("JSON_OBJECT", JSON_OBJECT_CONST, pCompiler);
+	NscAddToken ("JSON_ARRAY", JSON_ARRAY_CONST, pCompiler);
+	NscAddToken ("JSON_STRING", JSON_STRING_CONST, pCompiler);
+
 	pCompiler ->NscGetCompilerState() ->m_fEnableExtensions = fEnableExtensions;
 
 	//
@@ -219,7 +228,7 @@ bool NscCompilerInitialize (CNwnLoader *pLoader, int nVersion,
 	if (sCtx .parse () != 0 || sCtx .GetErrors () > 0)
 	{
 		if (pTextOut)
-			pTextOut ->WriteText ("ERROR: Error while parsing nwscript.nss\n");
+			pTextOut ->WriteText ("ERROR: Error compiling nwscript.nss\n");
 		return false;
 	}
 
@@ -413,8 +422,25 @@ NscResult NscCompileScript (CNwnLoader *pLoader, const char *pszName,
 
 	try
 	{
-		if (!sGen .GenerateOutput (pCodeOutput, pDebugOutput))
+		if (sGen .GenerateOutput (pCodeOutput, pDebugOutput, fIgnoreIncludes))
+		{
+			//
+			// If using the -c flag, prevent creating a compiled file.
+			//
+
+			if (!fIgnoreIncludes && !sCtx .HasMain ())
+			{
+				if (fAllocated)
+					free (pauchData);
+				return NscResult_Include;
+			}
+		}
+		else
 			return NscResult_Failure;
+
+
+		//if (!sGen .GenerateOutput (pCodeOutput, pDebugOutput, fIgnoreIncludes))
+		//	return NscResult_Failure;
 	}
 	catch (std::exception)
 	{
@@ -765,6 +791,11 @@ NscCompiler::NscCompileScript (
 	return Result;
 }
 
+void NscCompiler::NscSetLogger(IDebugTextOut* Logger)
+{
+	m_ErrorOutput = Logger;
+}
+
 //-----------------------------------------------------------------------------
 //
 // @mfunc Compile a script (from memory).
@@ -833,7 +864,7 @@ NscCompiler::NscCompileScript (
 		if (ErrorOutput != NULL)
 		{
 			ErrorOutput ->WriteText (
-				"ERROR: Failed to initialize compiler; compilation aborted.\n");
+				"Failed to initialize compiler; compilation aborted.\n");
 		}
 
 		return NscResult_Failure;
@@ -849,7 +880,7 @@ NscCompiler::NscCompileScript (
 		ScriptNameStr  = m_ResourceManager .StrFromResRef (ScriptName);
 		ScriptNameStr += ".nss";
 
-		assert (m_ErrorOutput == NULL);
+		//assert (m_ErrorOutput != NULL);
 		m_ErrorOutput = ErrorOutput;
 		m_ShowIncludes = (CompilerFlags & NscCompilerFlag_ShowIncludes) != 0;
 		m_GenerateMakeDeps = (CompilerFlags & NscCompilerFlag_GenerateMakeDeps) != 0;
@@ -867,15 +898,15 @@ NscCompiler::NscCompileScript (
 				ScriptNameStr.c_str(),
 				(unsigned char*)ScriptText,
 				(UINT32)ScriptTextLength,
-				false,
-				CompilerVersion,
-				Optimize,
-				IgnoreIncludes,
-				&CodeStream,
-				&SymbolsStream,
-				ErrorOutput,
-				this,
-				CompilerFlags);
+			false,
+			CompilerVersion,
+			Optimize,
+			IgnoreIncludes,
+			&CodeStream,
+			&SymbolsStream,
+			ErrorOutput,
+			this,
+			CompilerFlags);
 		else
 			Result = ::NscCompileScript(this,
 				ScriptNameStr.c_str(),
@@ -1314,6 +1345,8 @@ NscCompiler::LoadResource (
 		if (FileContents != NULL)
 		{
             //LOG(DEBUG) << "Loaded File " << Str;
+			if (m_ErrorOutput != NULL)
+				m_ErrorOutput->WriteText("INFO: Loaded File -> %s\n", Str.c_str());
 
             std::string res = *it + "/" + pszName + "." + m_ResourceManager.ResTypeToExt(nResType);
 			*pfAllocated = true;

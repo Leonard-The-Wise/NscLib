@@ -1238,7 +1238,7 @@ Environment:
 		try
 		{
 			FileHandle ResManHandle;
-			ResHandle  HandleEntry;
+			ResHandle  HandleEntry{};
 
 			//
 			// Allocate a resource manager handle table entry.
@@ -1430,7 +1430,7 @@ Environment:
 	try
 	{
 		FileHandle ResManHandle;
-		ResHandle  HandleEntry;
+		ResHandle  HandleEntry{};
 
 		//
 		// Allocate a resource manager handle table entry.
@@ -2854,7 +2854,7 @@ Environment:
 
 --*/
 {
-	ResourceEntry Entry;
+	ResourceEntry Entry{};
 	FileId        MaxId;
 	ResRefT       ResRef;
 	ResType       Type;

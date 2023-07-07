@@ -1,5 +1,4 @@
 #include "Precomp.h"
-
 #include "BufferParser.h"
 
 using swutil::BufferParser;

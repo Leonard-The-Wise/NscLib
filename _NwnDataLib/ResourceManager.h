@@ -542,7 +542,7 @@ public:
 		 const std::string & Str
 		)
 	{
-		NWN::ResRef16 ResRef;
+		NWN::ResRef16 ResRef{};
 		size_t        l;
 
 		l = Str.length( );

@@ -4,7 +4,6 @@
 #include "Precomp.h"
 #include "OsCompat.h"
 //#include "../_NwnUtilLib/easylogging++.h"
-#include <stdexcept>
 
 #ifdef _MSC_VER
 #pragma once

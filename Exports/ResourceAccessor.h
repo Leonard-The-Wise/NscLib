@@ -17,7 +17,7 @@ Abstract:
 #ifndef _PROGRAMS_NWN2DATALIB_RESOURCEACCESSOR_H
 #define _PROGRAMS_NWN2DATALIB_RESOURCEACCESSOR_H
 
-#include "BaseTypes.h"
+#include "../_NwnBaseLib/BaseTypes.h"
 
 //typedef NWN::ResRef32 ResRefT;
 

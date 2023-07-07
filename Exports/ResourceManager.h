@@ -25,7 +25,7 @@ Abstract:
 #include "ResourceAccessor.h"
 //#include "GffFileReader.h"
 #include "KeyFileReader.h"
-#include "NWNUtilLib.h"
+#include "../_NwnUtilLib/NWNUtilLib.h"
 
 
 struct IDebugTextOut;

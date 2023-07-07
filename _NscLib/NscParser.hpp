@@ -175,7 +175,14 @@ namespace yy {
      RETURN = 303,
      SWITCH = 304,
      WHILE = 305,
-     NWCONST = 306
+     NWCONST = 306,
+     LOCATION_INVALID_CONST = 307,
+     JSON_NULL_CONST = 308,
+     JSON_FALSE_CONST = 309,
+     JSON_TRUE_CONST = 310,
+     JSON_OBJECT_CONST = 311,
+     JSON_ARRAY_CONST = 312,
+     JSON_STRING_CONST = 313
    };
 
     };
@@ -352,7 +359,7 @@ namespace yy {
 } // yy
 
 /* Line 35 of lalr1.cc  */
-#line 356 "NscParser.hpp"
+#line 363 "NscParser.hpp"
 
 
 

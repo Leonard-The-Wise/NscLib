@@ -223,7 +223,6 @@ public:
 	GetPatchState(
 		) const
 	{
-#pragma warning (disable : 26812)
 		return m_PatchState;
 	}
 

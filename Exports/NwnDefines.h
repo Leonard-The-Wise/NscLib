@@ -48,7 +48,7 @@
 //-----------------------------------------------------------------------------
 
 #ifdef _WIN32
-#include "win32_config.h"
+//#include "win32_config.h"
 #else
 //#include "config.h"
 #endif

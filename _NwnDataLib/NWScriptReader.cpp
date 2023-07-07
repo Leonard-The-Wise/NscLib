@@ -21,6 +21,8 @@ Abstract:
 #include "NWScriptReader.h"
 #include "FileWrapper.h"
 
+#pragma warning (push)
+#pragma warning (disable : 4474 4477 6031 6066 6271)
 
 NWScriptReader::NWScriptReader(
 	 const char * NcsFileName
@@ -365,7 +367,7 @@ Environment:
 	     it != m_SymbolTable.end( );
 	     ++it)
 	{
-		SymbolTableRawEntry RawEntry;
+		SymbolTableRawEntry RawEntry{};
 
 		RawEntry.PC   = it->first;
 		RawEntry.Name = it->second.c_str( );
@@ -825,7 +827,7 @@ Environment:
 			throw std::runtime_error( "Failed to load NDB file." );
 
 		fgets( Line, 1024, f );
-		// strtok( Line, "\r\n" );
+		strtok( Line, "\r\n" );
 
 		if (strcmp( Line, "NDB V1.0" ))
 			throw std::runtime_error( "Bad symbol file format." );
@@ -837,7 +839,8 @@ Environment:
 
 		while (fgets( Line, 1024, f ))
 		{
-			// strtok( Line, "\r\n" );
+
+			strtok( Line, "\r\n" );
 
 			if (!strncmp( Line, "f ", 2 ))
 			{
@@ -846,7 +849,7 @@ Environment:
 				ULONG EndPC;
 				ULONG NumParams;
 				char  ReturnType[ 256 ];
-#pragma warning (disable : 4474 4477 6066 6271)
+
 				if (sscanf(
 					Line,
 					"f %08x %08x %03d %s %s",
@@ -871,6 +874,7 @@ Environment:
 						)
 					);
 			}
+
 		}
 	}
 	catch (std::exception)
@@ -886,3 +890,5 @@ Environment:
 
 	return true;
 }
+
+#pragma warning (pop)

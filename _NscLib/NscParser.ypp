@@ -1,31 +1,4 @@
-/*************************************************************************
-**
-** Added info: This file is used to generate the following output files:
-**
-**  - NscParser.cpp
-**  - NscParser.hpp
-**  - location.hh
-**  - position.hh
-**  - stack.hh
-**
-**  If needed to recreate or update the parser, update this file instead
-**  and then use the "bison.exe" (GNU Bison version 2.4.1) provided in the 
-**  tools/bin folder (I made a release pack for that), with the following 
-**  command line:
-** 
-**  bison -S lalr1.cc NscParser.ypp -o NscParser.cpp
-**
-**  Also, Bison works erratically on folder with spaces on name...
-**  
-**  A word of warning: If you ever add or remove lines from this file, 
-**  you'll have to re-generate the source code above with Bison AGAIN, or 
-**  else your symbol tables WILL get corrupted, because the C++ pre-compiler 
-**  adds back-references here with the #line directives (no, didn't happen
-**  with me, but I tested on the debugger, so be advised. ;)
-**
-**  File edited by: Leonardo Silva on March-11-2022
-**
-**************************************************************************
+/*
 ** Neverwinter Nights Script compiler 
 **
 ** Copyright (c) 2002 - Edward T. Smith
@@ -84,6 +57,8 @@ int yylex (YYSTYPE* yylval);
 YYSTYPE NscBuildIdentifier (YYSTYPE p);
 YYSTYPE NscBuildObjectConstant (int nOID);
 YYSTYPE NscBuildVectorConstant (YYSTYPE px, YYSTYPE py, YYSTYPE pz);
+YYSTYPE NscBuildJsonConstant (const char* raw);
+YYSTYPE NscBuildLocationConstant (int nValue);
 YYSTYPE NscBuildCall (YYSTYPE pfn, YYSTYPE parglist);
 YYSTYPE NscBuildArgExpList (YYSTYPE parglist, YYSTYPE parg);
 YYSTYPE NscBuildElementAccess (YYSTYPE pStruct, YYSTYPE pElement);
@@ -135,6 +110,10 @@ bool NscBuildSyntaxError (int nToken, YYSTYPE yylval);
 
 %token BREAK CASE CONTINUE DEFAULT DO ELSE
 %token FOR IF RETURN  SWITCH  WHILE NWCONST
+
+%token LOCATION_INVALID_CONST
+
+%token JSON_NULL_CONST JSON_FALSE_CONST JSON_TRUE_CONST JSON_OBJECT_CONST JSON_ARRAY_CONST JSON_STRING_CONST
 
 %start translation_unit
 
@@ -189,6 +168,34 @@ primary_expression:
 	| '[' FLOAT_CONST ',' FLOAT_CONST ',' FLOAT_CONST ']'
 		{
 			$$ = NscBuildVectorConstant ($2, $4, $6);
+		}
+	| LOCATION_INVALID_CONST
+		{
+			$$ = NscBuildLocationConstant (LOCATION_PRESET_INVALID);
+		}
+	| JSON_NULL_CONST
+		{
+			$$ = NscBuildJsonConstant ("null");
+		}
+	| JSON_FALSE_CONST
+		{
+			$$ = NscBuildJsonConstant ("false");
+		}
+	| JSON_TRUE_CONST
+		{
+			$$ = NscBuildJsonConstant ("true");
+		}
+	| JSON_OBJECT_CONST
+		{
+			$$ = NscBuildJsonConstant ("{}");
+		}
+	| JSON_ARRAY_CONST
+		{
+			$$ = NscBuildJsonConstant ("[]");
+		}
+	| JSON_STRING_CONST
+		{
+			$$ = NscBuildJsonConstant ("\"\"");
 		}
 	;
 

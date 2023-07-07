@@ -18,7 +18,7 @@ Abstract:
 #define _SOURCE_PROGRAMS_NWNBASELIB_BASETYPES_H
 
 #include <string>
-#include "OsCompat.h"
+#include "../_NwnUtilLib/OsCompat.h"
 
 #ifdef _MSC_VER
 #pragma once

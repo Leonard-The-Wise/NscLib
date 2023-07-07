@@ -44,6 +44,9 @@
 #include "NscPCodeEnumerator.h"
 #include "NscCodeGenerator.h"
 
+#pragma warning (push)
+#pragma warning (disable: 6255 6386 6385)
+
 //
 // Externals
 //
@@ -134,12 +137,14 @@ CNscCodeGenerator::~CNscCodeGenerator ()
 // @parm CNwnStream * | pDebugOutput | Destination stream for NDB file. 
 //		(Can be NULL)
 //
+// @parm bool | IgnoreIncludes | Either or not we compile includes. 
+//
 // @rdesc TRUE if output was generated.
 //
 //-----------------------------------------------------------------------------
 
 bool CNscCodeGenerator::GenerateOutput (CNwnStream *pCodeOutput, 
-	CNwnStream *pDebugOutput)
+	CNwnStream *pDebugOutput, bool IgnoreIncludes)
 {
 
 	//
@@ -192,11 +197,15 @@ bool CNscCodeGenerator::GenerateOutput (CNwnStream *pCodeOutput,
 				return false;
 			}
 		}
-		else
-		{
-			m_pCtx ->GenerateMessage (NscMessage_ErrorEntrySymbolNotFound);
-			return false;
-		}
+	}
+
+	if (IgnoreIncludes && pSymbol == NULL)	{
+		m_pCtx ->GenerateMessage (NscMessage_ErrorEntrySymbolNotFound);
+		return false;
+	// If we want to compile an include, treat it like a StartingConditional
+	} else if (!IgnoreIncludes && pSymbol == NULL) {
+		pszRoutine = "StartingConditional";
+		fIsMain = false;
 	}
 
 	//
@@ -250,10 +259,13 @@ bool CNscCodeGenerator::GenerateOutput (CNwnStream *pCodeOutput,
 	// Add our main
 	//
 
-	pSymbol ->ulFlags |= NscSymFlag_Referenced;
-	m_anFunctions .push_back (m_pCtx ->GetSymbolOffset (pSymbol));
-	GatherUsed (pSymbol);
-	
+	if (pSymbol)
+	{
+		pSymbol->ulFlags |= NscSymFlag_Referenced;
+		m_anFunctions.push_back(m_pCtx->GetSymbolOffset(pSymbol));
+		GatherUsed(pSymbol);
+	}
+
 	//
 	// Initialize the stack depths
 	//
@@ -592,8 +604,12 @@ bool CNscCodeGenerator::GenerateOutput (CNwnStream *pCodeOutput,
 		return false;
 	
 	//
-	// Write the output
+	// Write the output.
+	// Return early if file is not executable.
 	//
+
+	if (pSymbol == NULL)
+		return true;
 
 	UINT32 ulSize = (UINT32) (m_pauchOut - m_pauchCode);
 	WriteINT32 (&m_pauchCode [9], ulSize);
@@ -1194,6 +1210,12 @@ bool CNscCodeGenerator::CodeUnaryOp (NscCode nCode, NscType nType)
 		case NscType_Object:
 			m_pauchOut [1] = 6;
 			break;
+		case NscType_Engine_2:
+			m_pauchOut [1] = 0x12;
+			break;
+		case NscType_Engine_7:
+			m_pauchOut [1] = 0x17;
+			break;
 		default:
 			m_pCtx ->GenerateMessage (NscMessage_ErrorInternalCompilerError,
 				"invalid unary op type");
@@ -1703,6 +1725,22 @@ bool CNscCodeGenerator::CodeCONST (NscType nType, void *pData, const char *psz)
 					}
 					break;
 
+				case NscType_Engine_2:
+					{
+						UINT16 nLength = 0;
+						const char *sz = "";
+						CodeCONST (NscType_Engine_2, &nLength, sz);
+					}
+					break;
+
+				case NscType_Engine_7:
+					{
+						UINT16 nLength = 0;
+						const char *sz = "";
+						CodeCONST (NscType_Engine_7, &nLength, sz);
+					}
+					break;
+
 				case NscType_Object:
 					{
 						INT32 nObject = 0;
@@ -1750,9 +1788,11 @@ bool CNscCodeGenerator::CodeCONST (NscType nType, void *pData, const char *psz)
 
 	//
 	// If we have a simple value (integer and object id)
+	// NB: JSON (engst7) also encodes as as string-ish, so fall through
+	//     for that one.
 	//
 
-	else if (nType != NscType_String)
+	else if (nType != NscType_String && nType != NscType_Engine_7)
 	{
 		if (m_pauchOut + 4 > m_pauchCodeEnd)
 			ExpandOutputBuffer ();
@@ -2897,7 +2937,10 @@ bool CNscCodeGenerator::CodeData (unsigned char *pauchData, size_t nDataSize)
 					//
 
 					NscPCodeHeader **papArgs = (NscPCodeHeader **)
+#pragma warning (push)
+#pragma warning (disable: 6263)
 						alloca (nArgCount * sizeof (NscPCodeHeader *));
+#pragma warning (pop)
 					for (int i = 0; i < nArgCount; i++)
 					{
 						NscPCodeHeader *p1 = (NscPCodeHeader *) pauchCallData;
@@ -3871,6 +3914,18 @@ do_binaryop:;
 							CodeCONST (NscType_Float, &p ->v [2]);
 						}
 						break;
+					case NscType_Engine_2:
+						{
+							NscPCodeConstantLocation *p = (NscPCodeConstantLocation *) pHeader;
+							CodeCONST (p ->nType, &p ->lValue);
+						}
+						break;
+					case NscType_Engine_7:
+						{
+							NscPCodeConstantJson *p = (NscPCodeConstantJson *) pHeader;
+							CodeCONST (p ->nType, &p ->nLength, p ->szString);
+						}
+						break;
 					default:
 						{
 							NscPCodeConstantStructure *p = (NscPCodeConstantStructure *) pHeader;
@@ -4176,7 +4231,7 @@ void CNscCodeGenerator::ReferenceLabel (const char *pszRoutine)
 	else
 	{
 		size_t nSymbol = m_sLinker .GetSymbolOffset (pSymbol);
-		BackLink bl;
+		BackLink bl{};
 		bl .nNext = pSymbol ->nFirstBackLink;
 		bl .nOffset = nCurPos;
 		size_t nOffset = m_sLinker .AppendData (&bl, sizeof (bl));
@@ -4354,7 +4409,7 @@ void CNscCodeGenerator::AddLine (int nFile, int nLine,
 	// Add the line
 	//
 
-	Line sLine;
+	Line sLine{};
 	sLine .nFile = nFile;
 	sLine .nLine = nLine;
 	sLine .nCompiledStart = nCompiledStart;
@@ -4390,3 +4445,5 @@ bool CNscCodeGenerator::GetInitializerHasSideEffects (
 
 	return fHasSideEffects;
 }
+
+#pragma warning (pop)
